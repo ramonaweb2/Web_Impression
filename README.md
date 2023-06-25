@@ -6,7 +6,7 @@
 Build a Docker image:
 > sudo docker build -t ramonagospodinova/web_impression .
 
-Docker post install:
+* Docker post install:
 > https://docs.docker.com/engine/install/linux-postinstall/
 
 Run specific docker-compose file
@@ -23,3 +23,9 @@ To rebuild:
 
 To push docker image to Docker hub
 > sudo docker-compose -f docker-compose.prod.yml push web
+
+### Troubleshooting
+Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in use
+# List who's using the port
+> sudo lsof -i -P -n | grep 80
+> sudo kill <process id>
