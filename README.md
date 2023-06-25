@@ -1,10 +1,25 @@
 # Web Impression Mockup
 
-# view service logs for 'web' service:
-# docker-compose logs -f web
+## Beginning:
+> sudo apt install docker-compose
 
-# To rebuild:
-# sudo docker-compose -up -d --build
+Build a Docker image:
+> sudo docker build -t ramonagospodinova/web_impression .
 
-# run specific docker-compose file
-#  sudo docker-compose -f docker-compose.prod.yml up -d
+Docker post install:
+> https://docs.docker.com/engine/install/linux-postinstall/
+
+Run specific docker-compose file
+> sudo docker-compose -f docker-compose.prod.yml up -d
+
+Run specific 'service' from 'docker-compose' file, i.e. 'nginx'
+> sudo docker-compose -f docker-compose.prod.yml run nginx
+
+View service logs for 'web' service:
+> sudo docker-compose logs -f web
+
+To rebuild:
+> sudo docker-compose -f docker-compose.prod.yml -up -d --build
+
+To push docker image to Docker hub
+> sudo docker-compose -f docker-compose.prod.yml push web
