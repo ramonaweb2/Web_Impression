@@ -13,7 +13,7 @@ Build a Docker image:
 Down docker services:
 > docker-compose down --remove-orphans
 
-Run specific docker-compose file
+Run specific docker-compose file (-f + <docker-compose filename)
 > sudo docker-compose -f docker-compose.prod.yml up -d
 
 Run specific 'service' from 'docker-compose' file, i.e. 'nginx'
@@ -27,6 +27,7 @@ View service logs for 'web' service:
 
 To rebuild:
 > sudo docker-compose -f docker-compose.prod.yml -up -d --build
+(sudo docker-compose up --build)
 
 Build specific service, i.e 'web'
 > sudo docker-compose -f docker-compose.prod.yml up -d --build web

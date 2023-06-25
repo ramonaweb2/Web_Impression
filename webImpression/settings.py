@@ -99,7 +99,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [BASE_DIR / "static"]
-STATIC_ROOT = BASE_DIR / "tmp/web_impression/staticfiles" # python manage.py collectstatic:
+STATIC_ROOT = BASE_DIR / "staticfiles"  # python manage.py collectstatic:
 
 # (/home/app/web/tmp/web_impression/staticfiles)
 
