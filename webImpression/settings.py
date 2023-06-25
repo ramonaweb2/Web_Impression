@@ -5,11 +5,12 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.environ.get('SECRET_KEY', 'Default_Key')
-
 DEBUG = bool(os.environ.get('DEBUG'))
 
-
 ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '').split(' ')
+CORS_ALLOWED_ORIGINS = os.environ.get('CORS_ALLOWED_ORIGINS', '').split(' ')
+CSRF_TRUSTED_ORIGINS = [f'https://{x}' for x in ALLOWED_HOSTS]
+CORS_ALLOWED_ORIGINS = [f'https://{x}' for x in CORS_ALLOWED_ORIGINS]
 
 # Application definition
 INSTALLED_APPS = [
@@ -19,10 +20,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # Custom apps:
     'webImpression.web',
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -69,7 +73,6 @@ DATABASES = {
 
 
 # Password validation
-# https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 if DEBUG:
     AUTH_PASSWORD_VALIDATORS = []
 else:
@@ -100,9 +103,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [BASE_DIR / "static"]
-
-## python manage.py collectstatic:
-STATIC_ROOT = BASE_DIR / "staticfiles"
+STATIC_ROOT = BASE_DIR / "tmp/web_impression/staticfiles" # python manage.py collectstatic:
 
 
 # Media files (user created files)
