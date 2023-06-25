@@ -8,9 +8,6 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'Default_Key')
 DEBUG = bool(os.environ.get('DEBUG'))
 
 ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '').split(' ')
-CORS_ALLOWED_ORIGINS = os.environ.get('CORS_ALLOWED_ORIGINS', '').split(' ')
-CSRF_TRUSTED_ORIGINS = [f'https://{x}' for x in ALLOWED_HOSTS]
-CORS_ALLOWED_ORIGINS = [f'https://{x}' for x in CORS_ALLOWED_ORIGINS]
 
 # Application definition
 INSTALLED_APPS = [
@@ -104,6 +101,7 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [BASE_DIR / "static"]
 STATIC_ROOT = BASE_DIR / "tmp/web_impression/staticfiles" # python manage.py collectstatic:
 
+# (/home/app/web/tmp/web_impression/staticfiles)
 
 # Media files (user created files)
 MEDIA_URL = '/media/'
