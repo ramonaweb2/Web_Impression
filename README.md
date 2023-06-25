@@ -9,11 +9,12 @@ Build a Docker image:
 * Docker post install:
 > https://docs.docker.com/engine/install/linux-postinstall/
 
-Run specific docker-compose file
-> sudo docker-compose -f docker-compose.prod.yml up -d
 
 Down docker services:
 > docker-compose down --remove-orphans
+
+Run specific docker-compose file
+> sudo docker-compose -f docker-compose.prod.yml up -d
 
 Run specific 'service' from 'docker-compose' file, i.e. 'nginx'
 > sudo docker-compose -f docker-compose.prod.yml run nginx
@@ -28,7 +29,7 @@ To rebuild:
 > sudo docker-compose -f docker-compose.prod.yml -up -d --build
 
 Build specific service, i.e 'web'
-> sudo docker compose -f docker-compose.prod.yml up -d --build web
+> sudo docker-compose -f docker-compose.prod.yml up -d --build web
 
 To push docker image to Docker hub
 > sudo docker-compose -f docker-compose.prod.yml push web
