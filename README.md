@@ -48,6 +48,9 @@ Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in 
 > sudo lsof -i -P -n | grep 80
 > sudo kill <process id>
 
+# Reload NGINX
+> sudo systemctl reload nginx
+
 
 ### Git commands:
 Pull from master branch:

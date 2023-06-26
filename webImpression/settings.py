@@ -101,13 +101,13 @@ STATIC_URL = 'static/' # Django will search for /static/
 STATICFILES_DIRS = [  # Django will search for /static/
     BASE_DIR / "static"
 ]
-STATIC_ROOT = "staticfiles/"  # Basic configuration when using: python manage.py collectstatic
+STATIC_ROOT = BASE_DIR / "staticfiles"  # Basic configuration when using: python manage.py collectstatic
 
 # (/home/app/web/tmp/web_impression/staticfiles)
 
 # Media files (user created files)
 MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR / 'media'
+MEDIA_ROOT = BASE_DIR / 'media'     # Basic configuration when using: python manage.py collectstatic
 
 # Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
