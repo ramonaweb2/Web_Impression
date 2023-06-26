@@ -49,7 +49,10 @@ Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in 
 > sudo kill <process id>
 
 # Reload NGINX
-> sudo systemctl reload nginx
+> sudo systemctl reload nginx,
+
+# Purging All Unused or Dangling Images, Containers, Volumes, and Networks
+> docker system prune -a
 
 
 ### Git commands:
