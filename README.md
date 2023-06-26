@@ -26,7 +26,7 @@ View service logs for 'web' service:
 > sudo docker-compose logs -f web
 
 To rebuild:
-> sudo docker-compose -f docker-compose.prod.yml -up -d --build
+> sudo docker-compose -f docker-compose.prod.yml up -d --build
 (sudo docker-compose up --build)
 
 Build specific service, i.e 'web'
@@ -55,6 +55,8 @@ Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in 
 
 # Purging All Unused or Dangling Images, Containers, Volumes, and Networks
 > docker system prune -a
+
+# SSL Certificate:
 
 
 ### Git commands:
