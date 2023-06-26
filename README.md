@@ -37,7 +37,7 @@ To push docker image to Docker hub
 
 ### Only production commands:
 > sudo docker-compose -f docker-compose.prod.yml exec web python manage.py collectstatic
-(Result: 193 static files copied to '/home/app/web/staticfiles'.)
+(Result: 193 static files copied to '/tmp/webImpression/staticfiles'.)
 
 Start bash in container:
 > docker exec -it fee20678f998 bash
@@ -49,7 +49,9 @@ Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in 
 > sudo kill <process id>
 
 # Reload NGINX
-> sudo systemctl reload nginx,
+> sudo systemctl reload nginx
+# Force recreate NGINX:
+> docker-compose -f docker-compose.prod.yml up -d --force-recreate nginx
 
 # Purging All Unused or Dangling Images, Containers, Volumes, and Networks
 > docker system prune -a

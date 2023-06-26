@@ -101,7 +101,7 @@ STATIC_URL = 'static/' # Django will search for /static/
 STATICFILES_DIRS = [  # Django will search for /static/
     BASE_DIR / "static"
 ]
-STATIC_ROOT = BASE_DIR / "staticfiles"  # Basic configuration when using: python manage.py collectstatic
+STATIC_ROOT = "/tmp/webImpression/staticfiles"  # Basic configuration when using: python manage.py collectstatic
 
 # (/home/app/web/tmp/web_impression/staticfiles)
 
