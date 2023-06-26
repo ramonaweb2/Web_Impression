@@ -97,9 +97,11 @@ USE_I18N = True
 USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
-STATIC_URL = 'static/'
-STATICFILES_DIRS = [BASE_DIR / "static"]
-STATIC_ROOT = BASE_DIR / "tmp/webImpression/staticfiles"  # python manage.py collectstatic:
+STATIC_URL = 'static/' # Django will search for /static/
+STATICFILES_DIRS = [  # Django will search for /static/
+    BASE_DIR / "static"
+]
+STATIC_ROOT = "static/"  # Basic configuration when using: python manage.py collectstatic
 
 # (/home/app/web/tmp/web_impression/staticfiles)
 
