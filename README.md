@@ -63,7 +63,7 @@ Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in 
 # You should get a success message like "The dry run was successful".
 
 # 2. Generate certificate (without --dry-run)
-#  docker-compose -f docker-compose-certbot.yml run --rm  certbot certonly --webroot --webroot-path /var/www/certbot/ -d shopper.plana.cloud
+#  docker-compose -f docker-compose-certbot.yml run --rm  certbot certonly --webroot --webroot-path /var/www/certbot/ -d web-impression.net
 
 
 ### Git commands:
