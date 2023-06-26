@@ -32,9 +32,6 @@ To rebuild:
 Build specific service, i.e 'web'
 > sudo docker-compose -f docker-compose.prod.yml up -d --build web
 
-To push docker image to Docker hub
-> sudo docker-compose -f docker-compose.prod.yml push web
-
 ### Only production commands:
 > sudo docker-compose -f docker-compose.prod.yml exec web python manage.py collectstatic
 (Result: 193 static files copied to '/tmp/webImpression/staticfiles'.)
@@ -69,3 +66,7 @@ Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in 
 ### Git commands:
 Pull from master branch:
 > git pull origin master
+
+### GitHub
+To push docker image to Docker hub
+> sudo docker-compose -f docker-compose.prod.yml push web
