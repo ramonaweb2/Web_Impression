@@ -97,7 +97,7 @@ USE_I18N = True
 USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
-STATIC_URL = 'static/' # Django will search for /static/
+STATIC_URL = 'static/'  # Django will search for /static/
 STATICFILES_DIRS = [  # Django will search for /static/
     BASE_DIR / "static"
 ]
