@@ -147,5 +147,4 @@ dmypy.json
 # Cython debug symbols
 cython_debug/
 
-nginx/conf.d/web-without-certificate.conf
-nginx/conf.d/web-with-certificate.conf
+ssl_certificate/
