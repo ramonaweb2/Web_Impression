@@ -10,7 +10,7 @@ DEBUG = bool(os.environ.get('DEBUG'))
 # DEBUG = True
 
 if DEBUG:
-    ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
+    ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'web-impression.net']
 else:
     ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '').split(' ')
 

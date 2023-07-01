@@ -54,15 +54,19 @@ Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in 
 > docker system prune -a
 
 # SSL Certificate:
+
+# > docker-compose -f docker-compose.prod.yml up -d --force-recreate nginx
+# remove directory 'certbot'
 # web.conf file in v1. (web-without-certificate.conf)
 # 1. You can now test that everything is working by running
 # docker-compose -f docker-compose-certbot.yml run --rm  certbot certonly --webroot --webroot-path /var/www/certbot/ --dry-run -d web-impression.net
+# email: ramona.gospodinova@gmail.com
 # You should get a success message like "The dry run was successful".
 
 # web.conf in v2. (web-with-certificate.conf)
 # 2. You can now generate certificate (without --dry-run) by running
 #  docker-compose -f docker-compose-certbot.yml run --rm  certbot certonly --webroot --webroot-path /var/www/certbot/ -d web-impression.net
-
+#  docker-compose -f docker-compose.prod.yml up -d --force-recreate nginx
 
 ### Git commands:
 Pull from master branch:
