@@ -56,7 +56,5 @@ class HomePageView(View):
                         context.update({
                             'message': error.args[1],
                         })
-        else:
-            return render('homepage', context)
+        return render('homepage', context)
 
-        return redirect('homepage')
