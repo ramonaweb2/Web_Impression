@@ -41,7 +41,10 @@ class HomePageView(View):
                     message,
                     from_email=settings.DEFAULT_FROM_EMAIL,
                     recipient_list=[email],
-                    fail_silently=False)
+                    auth_user=settings.EMAIL_HOST_USER,
+                    auth_password=settings.EMAIL_HOST_PASSWORD,
+                    fail_silently=False,
+                )
             except SMTPDataError as error:
                 context.update({
                     'message': error.args[1],
