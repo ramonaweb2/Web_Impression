@@ -39,9 +39,8 @@ class HomePageView(View):
                 port=settings.EMAIL_PORT,
                 username=settings.EMAIL_HOST_USER,
                 password=settings.EMAIL_HOST_PASSWORD,
-                use_tls=settings.EMAIL_USE_TLS) as connection:
-
-                    # Send email:
+                use_tls=settings.EMAIL_USE_TLS
+            ) as connection:
                     email = EmailMessage(
                         subject=subject,
                         body=message,
@@ -56,5 +55,6 @@ class HomePageView(View):
                         context.update({
                             'message': error.args[1],
                         })
-        return render('homepage', context)
+
+        return render(request, 'index.html', context)
 
