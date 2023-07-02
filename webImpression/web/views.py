@@ -34,7 +34,7 @@ class HomePageView(View):
             email = EmailMessage(
                 subject=subject,
                 body=message,
-                from_email='web-impression.net',
+                from_email='info@web-impression.net',
                 to=['ramona.gospodinova@gmail.com'],
                 reply_to=[email]    # Email from the form to get back to
             )
