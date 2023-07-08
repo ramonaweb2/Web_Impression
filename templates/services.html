@@ -1,0 +1,76 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block main_content %}
+    <!--  New code goes here -->
+    <section id="main-banner" class="main-banner wow fadeIn animated section-heading">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 align-self-center">
+                    <div class="left-content header-text wow fadeInLeft animated">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <h1>Нашите услуги зад вашите успехи</h1>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="main-green-button scroll-to-section">
+                                    <a href="#our_services">Виж услуги</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <img src="{% static 'images/banner-right-image-1.png' %}" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="our_services" class="section">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="service-item">
+                        <h2>Изработка на уебсайт</h2>
+                        <div class="line-dec"></div>
+                        <p>Ние ще изпълним планирането, разработката на Вашия бизнес сайт.
+                            За да бъдем максимално полезни и изпълним всички ваши изисквания
+                            ние ви предлагаме безплатна поддръжка след завършването на уебсайта.
+                            Създаваме удобен, адаптвен и опростен уеб сайт, който напълно да отговаря
+                            на вашите нужди.
+                            Избираме подходяща структура, която да съответства на целите и предизвикателствата.
+                            Нашата работа включва и добавяне на съдържание и актуализиране на старото,
+                            техническа поддръжка.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="service-item">
+                        <h2>Редизайн на уебсайт</h2>
+                        <div class="line-dec"></div>
+                        <p>
+                            Ние можем да променим визията на уебсайта Ви, като използваме съвременни тенденции
+                            и освежанане на съдържанието. Ще запазим всички функционалности и текущото съдържание,
+                            ако те ще ви бъдат полезни.
+                            Нашата цел е да подобрим потребителското преживяване и цялостната визия и структура
+                            на сайта.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="service-item">
+                        <h2>SEO оптимизация на сайт</h2>
+                        <div class="line-dec"></div>
+                        <p>Ние ще извършим анализ на състоянието на сайта и ще съставим план за основна
+                            оптимизация на уебсайта. Минимумът от дейности за популяризирането му включва
+                            On-Page SEO и Off-Page SEO.
+                            Оптимизацията представлява комплекс от задачи, които се
+                            изпълняват постепенно, за да се изкачат всички страниците от сайта на
+                            по-високи позиции в Google.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock main_content %}

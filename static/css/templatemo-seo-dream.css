@@ -931,7 +931,8 @@ Features Style
   -moz-transition: background-color .5s;
 }
 
-.features-item:hover {
+.features-item:hover,
+.service-item:hover {
   background: rgb(51,204,197);
   background: linear-gradient(105deg, rgba(51,204,197,1) 0%, rgba(8,141,195,1) 100%);
 }
@@ -944,7 +945,8 @@ Features Style
   color: #fff;
 }
 
-.features-item:hover .line-dec {
+.features-item:hover .line-dec,
+.service-item:hover .line-dec {
   background-color: rgba(255,255,255,0.3);
 }
 
@@ -1011,7 +1013,7 @@ Features Style
   transition: all 0.5s;
 }
 
-.features-item .line-dec {
+.line-dec {
   width: 100px;
   height: 2px;
   background-color: rgba(51,204,197,0.3);
@@ -1273,10 +1275,10 @@ About Us Style
   margin: 40px 0;
 }
 
-/* 
+/*
 ---------------------------------------------
-Services Style
---------------------------------------------- 
+Homepage Services Style
+---------------------------------------------
 */
 
 .our-services {
@@ -1289,7 +1291,7 @@ Services Style
   margin-right: 75px;
 }
 
-.our-services .container-fluid {
+.container-fluid {
   padding: 0 80px;
 }
 
@@ -1330,6 +1332,14 @@ Services Style
   margin-bottom: 15px;
 }
 
+/*
+---------------------------------------------
+Services Page Style
+---------------------------------------------
+*/
+#our_services .service-item {
+  text-align: center;
+}
 
 /* 
 ---------------------------------------------

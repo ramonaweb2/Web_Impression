@@ -11,6 +11,9 @@ from django.core.mail import send_mail
 
 
 class HomePageView(View):
+    """
+    Home page view
+    """
 
     @staticmethod
     def get(request, *args, **kwargs):
@@ -52,3 +55,19 @@ class HomePageView(View):
 
         return render(request, 'index.html', context)
 
+
+class ServicesView(View):
+    @staticmethod
+    def get(request, *args, **kwargs):
+        return render(request, 'services.html')
+
+
+class ContactsView(View):
+    @staticmethod
+    def get(request, *args, **kwargs):
+        form = ContactForm()
+
+        context = {
+            'form': form,
+        }
+        return render(request, 'contacts.html', context)
