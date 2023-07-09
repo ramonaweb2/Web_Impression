@@ -102,6 +102,17 @@ else:
         },
     ]
 
+# 87
+#
+# Dummy Caching (for development)
+# - this implements the cache interface, but doesn't actually cache
+# so you could have it on your development/testing site to reduce caching
+# and also prevent errors from caching, if those should arise.s
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.dummy.DummyCache',
+    }
+}
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
