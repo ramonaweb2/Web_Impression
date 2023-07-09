@@ -35,6 +35,13 @@ Build specific service, i.e 'web'
 ### Only production commands:
 > sudo docker-compose -f docker-compose.prod.yml exec web python manage.py collectstatic
 (Result: 193 static files copied to '/tmp/webImpression/staticfiles'.)
+Clearing static files:
+Remove static files:
+# 1.
+> python manage.py collectstatic --noinput --clear
+# 2.
+> cd /web_Impression/staticfiles
+> rm -rf /web_Impression/staticfiles/*
 
 Start bash in container:
 > docker exec -it fee20678f998 bash
@@ -55,13 +62,13 @@ Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in 
 > docker system prune -a
 
 # SSL Certificate:
-
+# {!!!
 # > docker-compose -f docker-compose.prod.yml up -d --force-recreate nginx
-# remove directory 'certbot'
+# remove directory 'certbot' !!! This will remove the certificate!!!
+
 # web.conf file in v1. (web-without-certificate.conf)
 # 1. You can now test that everything is working by running
 # docker-compose -f docker-compose-certbot.yml run --rm  certbot certonly --webroot --webroot-path /var/www/certbot/ --dry-run -d web-impression.net
-# email: ramona.gospodinova@gmail.com
 # You should get a success message like "The dry run was successful".
 
 # web.conf in v2. (web-with-certificate.conf)

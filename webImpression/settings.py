@@ -139,12 +139,12 @@ MEDIA_ROOT = BASE_DIR / 'media'     # Basic configuration when using: python man
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # SMTP configuration to send email:
-# MailTrap
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# MailJet
+EMAIL_BACKEND = 'django_mailjet.backends.MailjetBackend'
 EMAIL_HOST = os.environ.get('EMAIL_HOST')
 EMAIL_PORT = os.environ.get('EMAIL_PORT')
-EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
-EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
+EMAIL_USE_TLS = os.environ.get('EMAIL_USE_TLS')
+EMAIL_USE_SSL = os.environ.get('EMAIL_USE_SSL')
+MAILJET_API_KEY = os.environ.get('MAILJET_API_KEY')
+MAILJET_API_SECRET = os.environ.get('MAILJET_API_SECRET')
 DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL')
-EMAIL_USE_TLS = True
-EMAIL_USE_SSL = False
