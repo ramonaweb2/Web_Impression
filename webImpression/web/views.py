@@ -1,13 +1,11 @@
 from smtplib import SMTPDataError
 
-from django.conf import settings
 
 from django.shortcuts import render
 from django.views import View
 
+from webImpression.utils.emails import send_email_message
 from webImpression.web.forms import ContactForm
-
-from django.core.mail import send_mail
 
 
 class HomePageView(View):
@@ -34,26 +32,27 @@ class HomePageView(View):
         if form.is_valid():
             first_name = form.cleaned_data.get('first_name')
             last_name = form.cleaned_data.get('last_name')
-            email = form.cleaned_data.get('email')
+            email_from = form.cleaned_data.get('email')
             subject = form.cleaned_data.get('subject')
-            message = form.cleaned_data.get('message')
+            form_message = form.cleaned_data.get('message')
+
+            message = f"<div>Message: {form_message}</div>"
+            message += f"<div>From email: {email_from}</div>"
+            message += f"<div>Name: {first_name} {last_name}</div>"
 
             try:
-                send_mail(
-                    subject,
-                    message,
-                    from_email=settings.DEFAULT_FROM_EMAIL,
-                    recipient_list=[email],
-                    auth_user=settings.EMAIL_HOST_USER,
-                    auth_password=settings.EMAIL_HOST_PASSWORD,
-                    fail_silently=False,
-                )
+                status_code = send_email_message(subject, message)
+                if status_code:
+                    message_success = 'Email sent successfully'
+                else:
+                    message_success = 'Email not sent successfully'
+
                 context.update({
-                    'message_success': 'Email sent successfully'
+                    'message_success': message_success
                 })
             except SMTPDataError as error:
                 context.update({
-                    'message': error.args[1],
+                    'message_errors': error.args[1],
                 })
 
         return render(request, 'index.html', context)

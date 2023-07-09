@@ -480,9 +480,9 @@
                                                 <div class="alert alert-success">
                                                     {{ message_success }}
                                                 </div>
-                                            {% elif message %}
+                                            {% elif message_errors %}
                                                 <div class="alert alert-danger">
-                                                    {{ message }}
+                                                    {{ message_errors }}
                                                 </div>
                                             {% endif %}
                                             <button type="submit" id="form-submit" class="main-button">
