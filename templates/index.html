@@ -476,17 +476,17 @@
                                     {% endfor %}
                                     <div class="col-lg-12 form-submit">
                                         <fieldset>
-                                            {% if success_message %}
+                                            {% if message_success %}
                                                 <div class="alert alert-success">
-                                                    {{ success_message }}
+                                                    {{ message_success }}
                                                 </div>
                                             {% elif message %}
                                                 <div class="alert alert-danger">
                                                     {{ message }}
                                                 </div>
                                             {% endif %}
-                                            <button type="submit" id="form-submit" class="main-button">Изпрати
-                                                съобщение
+                                            <button type="submit" id="form-submit" class="main-button">
+                                                Изпрати съобщение
                                             </button>
                                         </fieldset>
                                     </div>
