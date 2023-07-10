@@ -1577,6 +1577,10 @@ form#contact button:hover {
   border-bottom: 2px solid #33ccc5!important;
 }
 
+form#contact .section-heading h2 {
+  color: #088ec3;
+}
+
 /* 
 ---------------------------------------------
 Footer Style
