@@ -38,10 +38,12 @@ Build specific service, i.e 'web'
 Clearing static files:
 Remove static files:
 # 1.
-> python manage.py collectstatic --noinput --clear
+> python3 manage.py collectstatic --noinput --clear
 # 2.
-> cd /web_Impression/staticfiles
-> rm -rf /web_Impression/staticfiles/*
+> cd /staticfiles/
+> sudo rm -rf /staticfiles/*
+# 3.
+> sudo docker-compose -f docker-compose.prod.yml exec web python manage.py collectstatic
 
 Start bash in container:
 > docker exec -it fee20678f998 bash

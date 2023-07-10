@@ -35,7 +35,7 @@ def send_email(request):
 
         try:
             status_code = compose_email_message(subject, message)
-            if not status_code:
+            if status_code != '200':
                 message_success = 'Email not sent successfully'
 
         except SMTPDataError as error:
