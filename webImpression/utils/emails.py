@@ -8,9 +8,6 @@ from django.core.mail import send_mail
 
 from webImpression.web.forms import ContactForm
 
-# DEFAULT_FROM_EMAIL = settings.DEFAULT_FROM_EMAIL
-DEFAULT_TO_EMAIL = settings.DEFAULT_TO_EMAIL
-
 
 def send_email_to_recipient(request):
     form = ContactForm(request.POST)
@@ -34,7 +31,7 @@ def send_email_to_recipient(request):
         message_success = 'Email sent successfully'
 
         try:
-            send_mail(subject, message, from_email=email_from, recipient_list=[DEFAULT_TO_EMAIL])
+            send_mail(subject, message, from_email=email_from, recipient_list=["ramona.gospodinova@gmail.com"])
 
         except SMTPDataError as error:
             context.update({

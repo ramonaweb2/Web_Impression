@@ -1,14 +1,10 @@
 
-import os
-
 from django.conf import settings
 from django.core.mail import send_mail
-from django.core.mail.backends.smtp import EmailBackend
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.views import View
 
-from webImpression.utils.emails import send_email_to_recipient
 from webImpression.web.forms import ContactForm
 
 
@@ -29,12 +25,10 @@ class HomePageView(View):
 
     @staticmethod
     def post(request):
-        message_success = send_email_to_recipient(request)
         form = ContactForm(request.POST)
 
         context = {
             'form': form,
-            'message_success': message_success,
         }
         return render(request, 'index.html', context)
 
@@ -57,12 +51,10 @@ class ContactsView(View):
 
     @staticmethod
     def post(request):
-        message_success = send_email_to_recipient(request)
         form = ContactForm(request.POST)
 
         context = {
             'form': form,
-            'message_success': message_success,
         }
         return render(request, 'contacts.html', context)
 
