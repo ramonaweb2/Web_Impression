@@ -145,4 +145,4 @@ EMAIL_USE_TLS = 1
 MAILJET_API_KEY = "272d99ea3a63bf4e08c11259e9c5f55e"
 MAILJET_API_SECRET = "4d1aa2e1e7ed6e69163a76fe1d0fbb3d"
 DEFAULT_FROM_EMAIL = "web-impression@protonmail.com"
-DEFAULT_TO_EMAIL = "ramona.gospodinova@gmail.com"
+DEFAULT_TO_EMAIL = "web-impression@protonmail.com"
