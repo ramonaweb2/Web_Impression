@@ -75,7 +75,7 @@ class TestView(View):
             message="Here is the message test.",
             from_email=os.environ.get('MAIL_FROM_EMAIL'),
             recipient_list=["ramona.gospodinova@gmail.com"],
-            connection=settings['EMAIL_BACKEND'],
+            connection=settings.EMAIL_BACKEND,
             fail_silently=False,
         )
         return HttpResponse("Success")
