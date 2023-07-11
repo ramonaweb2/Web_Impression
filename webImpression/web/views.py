@@ -69,7 +69,7 @@ class TestView(View):
                 subject="Subject here",
                 message="Here is the message test.",
                 from_email=settings.DEFAULT_FROM_EMAIL,
-                recipient_list=["ramona.gospodinova@gmail.com"],
+                recipient_list=[settings.DEFAULT_TO_EMAIL],
                 fail_silently=False,
             )
         except MailjetAPIError as error:
