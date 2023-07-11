@@ -8,10 +8,8 @@ from django.core.mail import send_mail
 
 from webImpression.web.forms import ContactForm
 
-DEFAULT_FROM_EMAIL = settings.DEFAULT_FROM_EMAIL
+# DEFAULT_FROM_EMAIL = settings.DEFAULT_FROM_EMAIL
 DEFAULT_TO_EMAIL = settings.DEFAULT_TO_EMAIL
-API_KEY = settings.MAILJET_API_KEY
-API_SECRET = settings.MAILJET_API_SECRET
 
 
 def send_email_to_recipient(request):
