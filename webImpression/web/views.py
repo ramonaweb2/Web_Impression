@@ -1,3 +1,7 @@
+
+import os
+
+from django.conf import settings
 from django.core.mail import send_mail
 from django.http import HttpResponse
 from django.shortcuts import render
@@ -67,10 +71,11 @@ class TestView(View):
     @staticmethod
     def get(request, *args, **kwargs):
         send_mail(
-            "Subject here",
-            "Here is the message test.",
-            "info@web-impression.net",
-            ["ramona.gospodinova@gmail.com"],
+            subject="Subject here",
+            message="Here is the message test.",
+            from_email=os.environ.get('MAIL_FROM_EMAIL'),
+            recipient_list=["ramona.gospodinova@gmail.com"],
+            connection=settings['EMAIL_BACKEND'],
             fail_silently=False,
         )
         return HttpResponse("Success")
