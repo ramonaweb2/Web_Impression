@@ -77,6 +77,7 @@ Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in 
 # web.conf in v2. (web-with-certificate.conf)
 # 2. You can now generate certificate (without --dry-run) by running
 # docker-compose -f docker-compose-certbot.yml run --rm  certbot certonly --webroot --webroot-path /var/www/certbot/ -d web-impression.net
+# 1
 # docker-compose -f docker-compose.prod.yml up -d --force-recreate nginx
 
 ### Git commands:
