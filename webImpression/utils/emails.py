@@ -3,8 +3,8 @@ This call sends a message to one recipient.
 """
 from smtplib import SMTPDataError
 
-from mailjet_rest.client import Client
 from django.conf import settings
+from django.core.mail import send_mail
 
 from webImpression.web.forms import ContactForm
 
@@ -14,12 +14,14 @@ API_KEY = settings.MAILJET_API_KEY
 API_SECRET = settings.MAILJET_API_SECRET
 
 
-def send_email(request):
+def send_email_to_recipient(request):
     form = ContactForm(request.POST)
 
     context = {
         'form': form,
     }
+
+    message_success = 'Email not sent successfully'
     if form.is_valid():
         first_name = form.cleaned_data.get('first_name')
         last_name = form.cleaned_data.get('last_name')
@@ -34,42 +36,11 @@ def send_email(request):
         message_success = 'Email sent successfully'
 
         try:
-            status_code = compose_email_message(subject, message)
-            if status_code != '200':
-                message_success = 'Email not sent successfully'
+            send_mail(subject, message, from_email=email_from, recipient_list=[DEFAULT_TO_EMAIL])
 
         except SMTPDataError as error:
             context.update({
                 'message_errors': error.args[1],
             })
-    else:
-        message_success = 'Email not sent successfully'
 
     return message_success
-
-
-def compose_email_message(subject, message):
-    mailjet = Client(auth=(API_KEY, API_SECRET), version='v3')
-
-    data = {
-        "Messages": [
-            {
-                "FromEmail": DEFAULT_FROM_EMAIL,
-                "FromName": "Administrator",
-                'Recipients': [
-                    {
-                        "Email": DEFAULT_TO_EMAIL,
-                        "Name": "WEB Impression Admin",
-                    }
-                ],
-                "Subject": subject,
-                "Text-Part": message,
-                "HTML-Part": message,
-            }
-        ]
-    }
-    result = mailjet.send.create(data=data)
-    #print(result.status_code)
-    #print(result.json())
-
-    return result.status_code

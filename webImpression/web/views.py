@@ -2,7 +2,7 @@
 from django.shortcuts import render
 from django.views import View
 
-from webImpression.utils.emails import send_email
+from webImpression.utils.emails import send_email_to_recipient
 from webImpression.web.forms import ContactForm
 
 
@@ -22,7 +22,7 @@ class HomePageView(View):
 
     @staticmethod
     def post(request):
-        message_success = send_email(request)
+        message_success = send_email_to_recipient(request)
         form = ContactForm(request.POST)
 
         context = {
@@ -50,7 +50,7 @@ class ContactsView(View):
 
     @staticmethod
     def post(request):
-        message_success = send_email(request)
+        message_success = send_email_to_recipient(request)
         form = ContactForm(request.POST)
 
         context = {
