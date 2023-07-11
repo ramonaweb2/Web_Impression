@@ -3,6 +3,7 @@ import os
 
 from django.conf import settings
 from django.core.mail import send_mail
+from django.core.mail.backends.smtp import EmailBackend
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.views import View
@@ -70,12 +71,20 @@ class TestView(View):
 
     @staticmethod
     def get(request, *args, **kwargs):
+        connection = EmailBackend(
+            host=settings.EMAIL_HOST,
+            port=settings.EMAIL_PORT,
+            useername=settings.EMAIL_HOST_USER,
+            password=settings.EMAIL_HOST_PASSWORD,
+            use_tls=settings.EMAIL_USE_TLS,
+            fail_silently=False,
+        )
         send_mail(
             subject="Subject here",
             message="Here is the message test.",
             from_email=os.environ.get('MAIL_FROM_EMAIL'),
             recipient_list=["ramona.gospodinova@gmail.com"],
-            connection=settings.EMAIL_BACKEND,
+            connection=connection,
             fail_silently=False,
         )
         return HttpResponse("Success")
