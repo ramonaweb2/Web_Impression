@@ -150,8 +150,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Django
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = os.environ.get('EMAIL_HOST')
-EMAIL_USE_TLS = True
-EMAIL_PORT=587
+EMAIL_USE_TLS = os.environ.get('EMAIL_USE_TLS')
+EMAIL_PORT = os.environ.get('EMAIL_PORT')
 DEFAULT_TO_EMAIL = os.environ.get('DEFAULT_TO_EMAIL')
 EMAIL_HOST_USER = os.environ.get('MAILJET_API_KEY')
 EMAIL_HOST_PASSWORD = os.environ.get('MAILJET_API_SECRET')
