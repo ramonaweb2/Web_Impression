@@ -76,8 +76,8 @@ class TestView(View):
     def get(request, *args, **kwargs):
         send_mail(
             "Subject here",
-            "Here is the message.",
-            "ramona.gospodinova@gmail.com",
+            "Here is the message test.",
+            "info@web-impreession.net",
             ["ramona.gospodinova@gmail.com"],
             fail_silently=False,
         )
