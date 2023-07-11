@@ -139,9 +139,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # SMTP configuration to send email:
 # MailJet
 EMAIL_BACKEND = 'django_mailjet.backends.MailjetBackend'
-EMAIL_HOST = os.environ.get('EMAIL_HOST')
-EMAIL_PORT = os.environ.get('EMAIL_PORT')
-EMAIL_USE_TLS = os.environ.get('EMAIL_USE_TLS')
+EMAIL_HOST = 'in-v3.mailjet.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = 1
 MAILJET_API_KEY = "8da31cfdfa6361f62d540d6c556b2b16"
 MAILJET_API_SECRET = "7e1a0be07eea293bd8e4a5e2704bbeca"
 DEFAULT_FROM_EMAIL = "info@web-impression.net"
