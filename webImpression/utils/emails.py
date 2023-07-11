@@ -49,25 +49,27 @@ def send_email(request):
 
 
 def compose_email_message(subject, message):
-    mailjet = Client(auth=(API_KEY, API_SECRET), version='v3.1')
+    mailjet = Client(auth=(API_KEY, API_SECRET), version='v3')
 
     data = {
         "Messages": [
             {
-                "From": {
-                    "Email": DEFAULT_FROM_EMAIL,
-                },
-                "To": [
+                "FromEmail": DEFAULT_FROM_EMAIL,
+                "FromName": "Administrator",
+                'Recipients': [
                     {
                         "Email": DEFAULT_TO_EMAIL,
                         "Name": "WEB Impression Admin",
                     }
                 ],
                 "Subject": subject,
-                "TextPart": message,
-                "HTMLPart": message,
+                "Text-Part": message,
+                "HTML-Part": message,
             }
         ]
     }
     result = mailjet.send.create(data=data)
+    print(result.status_code)
+    print(result.json())
+
     return result.status_code
