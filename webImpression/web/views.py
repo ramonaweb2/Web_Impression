@@ -71,20 +71,11 @@ class TestView(View):
 
     @staticmethod
     def get(request, *args, **kwargs):
-        connection = EmailBackend(
-            host=settings.EMAIL_HOST,
-            port=settings.EMAIL_PORT,
-            useername=settings.EMAIL_HOST_USER,
-            password=settings.EMAIL_HOST_PASSWORD,
-            use_tls=settings.EMAIL_USE_TLS,
-            fail_silently=False,
-        )
         send_mail(
             subject="Subject here",
             message="Here is the message test.",
-            from_email=os.environ.get('MAIL_FROM_EMAIL'),
+            from_email=settings.DEFAULT_FROM_EMAIL,
             recipient_list=["ramona.gospodinova@gmail.com"],
-            connection=connection,
             fail_silently=False,
         )
         return HttpResponse("Success")

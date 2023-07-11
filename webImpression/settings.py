@@ -138,20 +138,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # SMTP configuration to send email:
 # MailJet
-# EMAIL_HOST = os.environ.get('EMAIL_HOST')
-# EMAIL_PORT = os.environ.get('EMAIL_PORT')
-# EMAIL_USE_TLS = os.environ.get('EMAIL_USE_TLS')
-# EMAIL_USE_SSL = os.environ.get('EMAIL_USE_SSL')
-# MAILJET_API_KEY = os.environ.get('MAILJET_API_KEY')
-# MAILJET_API_SECRET = os.environ.get('MAILJET_API_SECRET')
-# DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL')
-# DEFAULT_TO_EMAIL = os.environ.get('DEFAULT_TO_EMAIL')
-
-# Django
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_BACKEND = 'django_mailjet.backends.MailjetBackend'
 EMAIL_HOST = os.environ.get('EMAIL_HOST')
-EMAIL_USE_TLS = os.environ.get('EMAIL_USE_TLS')
 EMAIL_PORT = os.environ.get('EMAIL_PORT')
-DEFAULT_TO_EMAIL = os.environ.get('DEFAULT_TO_EMAIL')
-EMAIL_HOST_USER = os.environ.get('MAILJET_API_KEY')
-EMAIL_HOST_PASSWORD = os.environ.get('MAILJET_API_SECRET')
+EMAIL_USE_TLS = os.environ.get('EMAIL_USE_TLS')
+MAILJET_API_KEY = os.environ.get('MAILJET_API_KEY')
+MAILJET_API_SECRET = os.environ.get('MAILJET_API_SECRET')
+DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL')
