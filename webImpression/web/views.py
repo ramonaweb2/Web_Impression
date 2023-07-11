@@ -4,6 +4,7 @@ from django.core.mail import send_mail
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.views import View
+from django_mailjet import MailjetAPIError
 
 from webImpression.web.forms import ContactForm
 
@@ -63,11 +64,20 @@ class TestView(View):
 
     @staticmethod
     def get(request, *args, **kwargs):
-        send_mail(
-            subject="Subject here",
-            message="Here is the message test.",
-            from_email=settings.DEFAULT_FROM_EMAIL,
-            recipient_list=["ramona.gospodinova@gmail.com"],
-            fail_silently=False,
-        )
+        try:
+            send_mail(
+                subject="Subject here",
+                message="Here is the message test.",
+                from_email=settings.DEFAULT_FROM_EMAIL,
+                recipient_list=["ramona.gospodinova@gmail.com"],
+                fail_silently=False,
+            )
+        except MailjetAPIError as error:
+            return HttpResponse(
+"""
+You have specified an incorrect API Key / API Secret Key pair.
+You may be unauthorized to access the API or your API key may be inactive.
+Visit API keys Management section to check your keys.
+"""
+            )
         return HttpResponse("Success")
