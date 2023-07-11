@@ -9,4 +9,3 @@ requests==2.31.0
 sqlparse==0.4.4
 typing_extensions==4.6.3
 urllib3==2.0.3
-django-mailjet==0.3.1
