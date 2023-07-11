@@ -1,4 +1,5 @@
-
+from django.core.mail import send_mail
+from django.http import HttpResponse
 from django.shortcuts import render
 from django.views import View
 
@@ -18,6 +19,15 @@ class HomePageView(View):
         context = {
             'form': form,
         }
+
+        send_mail(
+            "Subject here",
+            "Here is the message.",
+            "ramona.gospodinova@gmail.com",
+            ["ramona.gospodinova@gmail.com"],
+            fail_silently=False,
+        )
+
         return render(request, 'index.html', context)
 
     @staticmethod
@@ -58,3 +68,17 @@ class ContactsView(View):
             'message_success': message_success,
         }
         return render(request, 'contacts.html', context)
+
+
+class TestView(View):
+
+    @staticmethod
+    def get(request, *args, **kwargs):
+        send_mail(
+            "Subject here",
+            "Here is the message.",
+            "ramona.gospodinova@gmail.com",
+            ["ramona.gospodinova@gmail.com"],
+            fail_silently=False,
+        )
+        return HttpResponse("Success")
