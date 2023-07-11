@@ -74,10 +74,11 @@ class TestView(View):
             )
         except MailjetAPIError as error:
             return HttpResponse(
-"""
+f"""
 You have specified an incorrect API Key / API Secret Key pair.
 You may be unauthorized to access the API or your API key may be inactive.
 Visit API keys Management section to check your keys.
+Email From: {settings.DEFAULT_FROM_EMAIL}
 """
             )
         return HttpResponse("Success")
