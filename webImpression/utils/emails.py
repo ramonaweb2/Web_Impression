@@ -3,7 +3,7 @@ This call sends a message to one recipient.
 """
 from smtplib import SMTPDataError
 
-from mailjet_rest import Client
+from mailjet_rest.client import Client
 from django.conf import settings
 
 from webImpression.web.forms import ContactForm
