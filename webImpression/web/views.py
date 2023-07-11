@@ -69,7 +69,7 @@ class TestView(View):
         send_mail(
             "Subject here",
             "Here is the message test.",
-            "info@web-impreession.net",
+            "info@web-impression.net",
             ["ramona.gospodinova@gmail.com"],
             fail_silently=False,
         )
