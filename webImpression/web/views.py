@@ -20,14 +20,6 @@ class HomePageView(View):
             'form': form,
         }
 
-        send_mail(
-            "Subject here",
-            "Here is the message.",
-            "ramona.gospodinova@gmail.com",
-            ["ramona.gospodinova@gmail.com"],
-            fail_silently=False,
-        )
-
         return render(request, 'index.html', context)
 
     @staticmethod
