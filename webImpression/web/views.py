@@ -1,5 +1,5 @@
 from django.conf import settings
-from django.core.mail import send_mail, BadHeaderError
+from django.core.mail import EmailMessage
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.views import View
@@ -59,15 +59,25 @@ class ContactsView(View):
 
 
 class TestView(View):
-
     @staticmethod
     def get(request, *args, **kwargs):
-        try:
-            send_mail("Subject here",
-                      "Here is the message test.",
-                      settings.DEFAULT_FROM_EMAIL,
-                      [settings.DEFAULT_TO_EMAIL])
-        except BadHeaderError:  # add this
-            return HttpResponse('Invalid header found.')  # add this
+        return render(request, 'send_email.html')
 
-        return HttpResponse("Success")
+    @staticmethod
+    def post(request, *args, **kwargs):
+        if request.method == 'POST':
+            try:
+                subject = request.POST['subject']
+                message = request.POST['message']
+                from_email = request.POST['from']
+                html_message = bool(request.POST.get('html-message', False))
+                recipient_list = [request.POST.get('to', settings.DEFAULT_TO_EMAIL)]
+
+                email = EmailMessage(subject, message, from_email, recipient_list)
+                if html_message:
+                    email.content_subtype = 'html'
+                email.send()
+            except KeyError:
+                return HttpResponse('Please fill in all fields')
+
+            return HttpResponse('Email sent :)')
