@@ -62,12 +62,9 @@ class TestView(View):
 
     @staticmethod
     def get(request, *args, **kwargs):
-        send_mail(
-            subject="Subject here",
-            message="Here is the message test.",
-            from_email=settings.DEFAULT_FROM_EMAIL,
-            recipient_list=[settings.DEFAULT_TO_EMAIL],
-            fail_silently=False)
+        send_mail("Subject here",
+                  "Here is the message test.",
+                  settings.DEFAULT_FROM_EMAIL,
+                  [settings.DEFAULT_TO_EMAIL])
 
         return HttpResponse("Success")
-
