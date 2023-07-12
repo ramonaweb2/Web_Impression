@@ -59,7 +59,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'webImpression.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 if DEBUG:
@@ -131,18 +130,34 @@ STATIC_ROOT = "/tmp/webImpression/staticfiles"  # Basic configuration when using
 
 # Media files (user created files)
 MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR / 'media'     # Basic configuration when using: python manage.py collectstatic
+MEDIA_ROOT = BASE_DIR / 'media'  # Basic configuration when using: python manage.py collectstatic
 
 # Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # SMTP configuration to send email:
 # MailJet
-EMAIL_BACKEND = 'django_mailjet.backends.MailjetBackend'
-EMAIL_HOST = 'in-v3.mailjet.com'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = 1
-MAILJET_API_KEY = "272d99ea3a63bf4e08c11259e9c5f55e"
-MAILJET_API_SECRET = "4d1aa2e1e7ed6e69163a76fe1d0fbb3d"
-DEFAULT_FROM_EMAIL = "web-impression@protonmail.com"
-DEFAULT_TO_EMAIL = "web-impression@protonmail.com"
+# EMAIL_BACKEND = 'django_mailjet.backends.MailjetBackend'
+# EMAIL_HOST = 'in-v3.mailjet.com'
+# EMAIL_PORT = 587
+# EMAIL_USE_TLS = 1
+# MAILJET_API_KEY = "272d99ea3a63bf4e08c11259e9c5f55e"
+# MAILJET_API_SECRET = "4d1aa2e1e7ed6e69163a76fe1d0fbb3d"
+# DEFAULT_FROM_EMAIL = "web-impression@protonmail.com"
+# DEFAULT_TO_EMAIL = "web-impression@protonmail.com"
+
+# Amazon SES
+EMAIL_BACKEND = 'django_ses.SESBackend'
+
+# These are optional -- if they're set as environment variables they won't
+# need to be set here as well
+AWS_ACCESS_KEY_ID = 'AKIAUPYFAG5IEGETG5E6'
+AWS_SECRET_ACCESS_KEY = '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'
+
+# Additionally, if you are not using the default AWS region of us-east-1,
+# you need to specify a region, like so:
+# AWS_SES_REGION_NAME = 'us-west-2'
+# AWS_SES_REGION_ENDPOINT = 'email.us-west-2.amazonaws.com'
+
+# If you want to use the SESv2 client
+USE_SES_V2 = True

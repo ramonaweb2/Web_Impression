@@ -3,7 +3,6 @@ This call sends a message to one recipient.
 """
 from smtplib import SMTPDataError
 
-from django.conf import settings
 from django.core.mail import send_mail
 
 from webImpression.web.forms import ContactForm
