@@ -1,8 +1,9 @@
 from django.conf import settings
-from django.core.mail import EmailMessage
+from django.core.mail import EmailMessage, send_mail
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.views import View
+from django.views.generic import TemplateView
 
 from webImpression.web.forms import ContactForm
 
@@ -81,3 +82,14 @@ class TestView(View):
                 return HttpResponse('Please fill in all fields')
 
             return HttpResponse('Email sent :)')
+
+
+class SendEmailAnymail(TemplateView):
+    template_name = 'send_email.html'
+
+    def get(self, request, **kwargs):
+        send_mail("It works!", "This will get sent through Brevo",
+                  "Anymail Sender <ramonaweb2@gmail.com>", ["ramona.gospodinova@gmail.com"])
+
+        return self.render_to_response(self.get_context_data(**kwargs))
+

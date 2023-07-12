@@ -27,6 +27,10 @@ INSTALLED_APPS = [
 
     # Custom apps:
     'webImpression.web',
+
+    # Third-party apps:
+    'django_ses',
+    'anymail',
 ]
 
 MIDDLEWARE = [
@@ -102,7 +106,7 @@ else:
 # 87
 #
 # Dummy Caching (for development)
-# - this implements the cache interface, but doesn't actually cache
+# - this implements the cache interface, but doesn't actually cache,
 # so you could have it on your development/testing site to reduce caching
 # and also prevent errors from caching, if those should arise.s
 CACHES = {
@@ -147,12 +151,12 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # DEFAULT_TO_EMAIL = "web-impression@protonmail.com"
 
 # Amazon SES
-EMAIL_BACKEND = 'django_ses.SESBackend'
+# EMAIL_BACKEND = 'django_ses.SESBackend'
 
-AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
-AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
-
-aws_access_key_id = os.environ.get('AWS_ACCESS_KEY_ID')
+# AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+# AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+#
+# aws_access_key_id = os.environ.get('AWS_ACCESS_KEY_ID')
 
 # AWS_SES_ACCESS_KEY_ID = os.environ.get('AWS_SES_ACCESS_KEY')
 # AWS_SES_SECRET_ACCESS_KEY = os.environ.get('AWS_SES_SECRET_ACCESS_KEY')
@@ -164,6 +168,23 @@ aws_access_key_id = os.environ.get('AWS_ACCESS_KEY_ID')
 
 # If you want to use the SESv2 client
 # USE_SES_V2 = True
+# AWS_SES_AUTO_THROTTLE = 0
 
-DEFAULT_FROM_EMAIL = "web-impression@protonmail.com"
-DEFAULT_TO_EMAIL = "web-impression@protonmail.com"
+# DEFAULT_FROM_EMAIL = "web-impression@protonmail.com"
+# DEFAULT_TO_EMAIL = "web-impression@protonmail.com"
+
+
+# EMAIL
+# https://anymail.dev/en/stable/
+
+EMAIL_BACKEND = "anymail.backends.sendinblue.EmailBackend"
+
+ANYMAIL = {
+    "SENDINBLUE_API_KEY": os.environ.get("SENDINBLUE_API_KEY"),
+    "SEND_DEFAULTS": {
+        "tags": ["app"]
+    },
+    "DEBUG_API_REQUESTS": DEBUG,
+}
+
+DEFAULT_FROM_EMAIL = "ramonaweb2@gmail.com"
