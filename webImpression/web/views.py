@@ -88,12 +88,7 @@ class SendEmailAnymail(TemplateView):
     template_name = 'send_email.html'
 
     def get(self, request, **kwargs):
-        message = EmailMessage(to=["ramonaweb2@gmail.com"])
-        message.template_id = 9  # your template id
-        message.from_email = None  # use default template sender
-        message.send()  # that's it !
-
-        send_mail("It works!", "This will get sent through Brevo",
+        send_mail("It works!", "111 This will get sent through Brevo 222",
                   "Anymail Sender <ramonaweb2@gmail.com>", ["ramonaweb2@gmail.com"])
 
         return self.render_to_response(self.get_context_data(**kwargs))
