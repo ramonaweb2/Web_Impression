@@ -160,4 +160,7 @@ AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
 # AWS_SES_REGION_ENDPOINT = 'email.us-west-2.amazonaws.com'
 
 # If you want to use the SESv2 client
-USE_SES_V2 = True
+# USE_SES_V2 = True
+
+DEFAULT_FROM_EMAIL = "web-impression@protonmail.com"
+DEFAULT_TO_EMAIL = "web-impression@protonmail.com"
