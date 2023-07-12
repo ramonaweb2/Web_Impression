@@ -188,3 +188,4 @@ ANYMAIL = {
 }
 
 DEFAULT_FROM_EMAIL = "ramonaweb2@gmail.com"
+SENDINBLUE_API_URL = "https://api.sendinblue.com/v3/"
