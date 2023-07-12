@@ -62,21 +62,12 @@ class TestView(View):
 
     @staticmethod
     def get(request, *args, **kwargs):
-        try:
-            send_mail(
-                subject="Subject here",
-                message="Here is the message test.",
-                from_email=settings.DEFAULT_FROM_EMAIL,
-                recipient_list=[settings.DEFAULT_TO_EMAIL],
-                fail_silently=False,
-            )
-        except MailjetAPIError as error:
-            return HttpResponse(
-                f"""
-You have specified an incorrect API Key / API Secret Key pair.
-You may be unauthorized to access the API or your API key may be inactive.
-Visit API keys Management section to check your keys.
-Email From: {error}
-"""
-            )
+        send_mail(
+            subject="Subject here",
+            message="Here is the message test.",
+            from_email=settings.DEFAULT_FROM_EMAIL,
+            recipient_list=[settings.DEFAULT_TO_EMAIL],
+            fail_silently=False)
+
         return HttpResponse("Success")
+
