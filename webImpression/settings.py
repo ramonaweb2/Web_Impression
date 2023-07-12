@@ -149,10 +149,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Amazon SES
 EMAIL_BACKEND = 'django_ses.SESBackend'
 
-# These are optional -- if they're set as environment variables they won't
-# need to be set here as well
-# AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
-# AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
 
 AWS_SES_ACCESS_KEY_ID = os.environ.get('AWS_SES_ACCESS_KEY')
 AWS_SES_SECRET_ACCESS_KEY = os.environ.get('AWS_SES_SECRET_ACCESS_KEY')
