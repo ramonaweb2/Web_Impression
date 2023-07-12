@@ -1,5 +1,5 @@
 from django.conf import settings
-from django.core.mail import send_mail
+from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.views import View
@@ -62,9 +62,12 @@ class TestView(View):
 
     @staticmethod
     def get(request, *args, **kwargs):
-        send_mail("Subject here",
-                  "Here is the message test.",
-                  settings.DEFAULT_FROM_EMAIL,
-                  [settings.DEFAULT_TO_EMAIL])
+        try:
+            send_mail("Subject here",
+                      "Here is the message test.",
+                      settings.DEFAULT_FROM_EMAIL,
+                      [settings.DEFAULT_TO_EMAIL])
+        except BadHeaderError:  # add this
+            return HttpResponse('Invalid header found.')  # add this
 
         return HttpResponse("Success")
