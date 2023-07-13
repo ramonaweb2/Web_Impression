@@ -1,5 +1,6 @@
 import os
 
+from django.conf import settings
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.views import View
@@ -92,7 +93,7 @@ class SendEmailAnymail(View):
         headers = {
             "Content-Type": "application/json",
             "Accept": "application/json",
-            "api-key": os.environ.get("APY_KEY")
+            "api-key": settings.API_KEY,
         }
         response = requests.post(url=url, json=json_obj, headers=headers)
 
