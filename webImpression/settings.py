@@ -27,9 +27,6 @@ INSTALLED_APPS = [
 
     # Custom apps:
     'webImpression.web',
-
-    # Third-party apps:
-    'django_ses',
 ]
 
 MIDDLEWARE = [
