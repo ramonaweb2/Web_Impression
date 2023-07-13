@@ -30,7 +30,6 @@ INSTALLED_APPS = [
 
     # Third-party apps:
     'django_ses',
-    'anymail',
 ]
 
 MIDDLEWARE = [
@@ -139,62 +138,12 @@ MEDIA_ROOT = BASE_DIR / 'media'  # Basic configuration when using: python manage
 # Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# SMTP configuration to send email:
-# MailJet
-# EMAIL_BACKEND = 'django_mailjet.backends.MailjetBackend'
-# EMAIL_HOST = 'in-v3.mailjet.com'
-# EMAIL_PORT = 587
-# EMAIL_USE_TLS = 1
-# MAILJET_API_KEY = "272d99ea3a63bf4e08c11259e9c5f55e"
-# MAILJET_API_SECRET = "4d1aa2e1e7ed6e69163a76fe1d0fbb3d"
-# DEFAULT_FROM_EMAIL = "web-impression@protonmail.com"
-# DEFAULT_TO_EMAIL = "web-impression@protonmail.com"
-
-# Amazon SES
-# EMAIL_BACKEND = 'django_ses.SESBackend'
-
-# AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
-# AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
-#
-# aws_access_key_id = os.environ.get('AWS_ACCESS_KEY_ID')
-
-# AWS_SES_ACCESS_KEY_ID = os.environ.get('AWS_SES_ACCESS_KEY')
-# AWS_SES_SECRET_ACCESS_KEY = os.environ.get('AWS_SES_SECRET_ACCESS_KEY')
-
-# Additionally, if you are not using the default AWS region of us-east-1,
-# you need to specify a region, like so:
-# AWS_SES_REGION_NAME = 'us-west-2'
-# AWS_SES_REGION_ENDPOINT = 'email.us-west-2.amazonaws.com'
-
-# If you want to use the SESv2 client
-# USE_SES_V2 = True
-# AWS_SES_AUTO_THROTTLE = 0
-
-# DEFAULT_FROM_EMAIL = "web-impression@protonmail.com"
-# DEFAULT_TO_EMAIL = "web-impression@protonmail.com"
-
-
-# EMAIL
-# https://anymail.dev/en/stable/
-
-# EMAIL_BACKEND = "anymail.backends.sendinblue.EmailBackend"
-#
-# ANYMAIL = {
-#     "SENDINBLUE_API_KEY": os.environ.get("SENDINBLUE_API_KEY"),
-#     "SEND_DEFAULTS": {
-#         "tags": ["app"]
-#     },
-#     "DEBUG_API_REQUESTS": DEBUG,
-# }
-#
-# DEFAULT_FROM_EMAIL = "ramonaweb2@gmail.com"
-# SENDINBLUE_API_URL = "https://api.sendinblue.com/v3/"
-
 # SMTP Brevo
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST = "smtp-relay.brevo.com"
-# 587 without a secure connection
-# 465 with secure connection
-EMAIL_PORT = 465
-EMAIL_USER = os.environ.get("EMAIL_USER")
-EMAIL_PASSWORD = os.environ.get("EMAIL_PASSWORD")
+EMAIL_PORT = 587
+EMAIL_HOST_USER = os.environ.get("EMAIL_HOST_USER")
+EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD")
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
+DEFAULT_FROM_EMAIL = os.environ.get("DEFAULT_FROM_EMAIL")

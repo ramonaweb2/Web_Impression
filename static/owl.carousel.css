@@ -156,8 +156,7 @@
   left: 50%;
   top: 50%;
   margin-left: -40px;
-  margin-top: -40px;
-  background: url("owl.video.play.png") no-repeat;
+  margin-top: -40px;s
   cursor: pointer;
   z-index: 1;
   -webkit-backface-visibility: hidden;
