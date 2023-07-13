@@ -177,15 +177,24 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # EMAIL
 # https://anymail.dev/en/stable/
 
-EMAIL_BACKEND = "anymail.backends.sendinblue.EmailBackend"
+# EMAIL_BACKEND = "anymail.backends.sendinblue.EmailBackend"
+#
+# ANYMAIL = {
+#     "SENDINBLUE_API_KEY": os.environ.get("SENDINBLUE_API_KEY"),
+#     "SEND_DEFAULTS": {
+#         "tags": ["app"]
+#     },
+#     "DEBUG_API_REQUESTS": DEBUG,
+# }
+#
+# DEFAULT_FROM_EMAIL = "ramonaweb2@gmail.com"
+# SENDINBLUE_API_URL = "https://api.sendinblue.com/v3/"
 
-ANYMAIL = {
-    "SENDINBLUE_API_KEY": os.environ.get("SENDINBLUE_API_KEY"),
-    "SEND_DEFAULTS": {
-        "tags": ["app"]
-    },
-    "DEBUG_API_REQUESTS": DEBUG,
-}
-
-DEFAULT_FROM_EMAIL = "ramonaweb2@gmail.com"
-SENDINBLUE_API_URL = "https://api.sendinblue.com/v3/"
+# SMTP Brevo
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST = "smtp-relay.brevo.com"
+# 587 without a secure connection
+# 465 with secure connection
+EMAIL_PORT = 465
+EMAIL_USER = os.environ.get("EMAIL_USER")
+EMAIL_PASSWORD = os.environ.get("EMAIL_PASSWORD")

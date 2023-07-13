@@ -91,5 +91,5 @@ class SendEmailAnymail(TemplateView):
         send_mail("It works!", "111 This will get sent through Brevo 222",
                   "Anymail Sender <ramonaweb2@gmail.com>", ["ramonaweb2@gmail.com"])
 
-        return self.render_to_response(self.get_context_data(**kwargs))
+        return HttpResponse('OK')
 
