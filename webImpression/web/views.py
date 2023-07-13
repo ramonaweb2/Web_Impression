@@ -92,7 +92,7 @@ class SendEmailAnymail(View):
         headers = {
             "Content-Type": "application/json",
             "Accept": "application/json",
-            "api-key": settings.APY_KEY
+            "api-key": "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"
         }
         response = requests.post(url=url, json=json_obj, headers=headers)
 
