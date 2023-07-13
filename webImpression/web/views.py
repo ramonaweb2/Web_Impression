@@ -88,10 +88,6 @@ class SendEmailAnymail(View):
                 "email": "ramonaweb2@gmail.com",
                 "name": "Ann"
             },
-            "tags": [
-                "tag1",
-                "tag2"
-            ]
         }
         headers = {
             "Content-Type": "application/json",
@@ -99,6 +95,5 @@ class SendEmailAnymail(View):
             "api-key": os.environ.get("APY_KEY")
         }
         response = requests.post(url=url, json=json_obj, headers=headers)
-        print(response.text)
 
-        return HttpResponse('OK')
+        return HttpResponse(response.text)
