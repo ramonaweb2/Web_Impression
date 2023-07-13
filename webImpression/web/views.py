@@ -1,12 +1,8 @@
-import json
 import os
 
-from django.conf import settings
-from django.core.mail import EmailMessage, send_mail
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.views import View
-from django.views.generic import TemplateView
 
 from webImpression.web.forms import ContactForm
 
@@ -64,35 +60,10 @@ class ContactsView(View):
         return render(request, 'contacts.html', context)
 
 
-class TestView(View):
-    @staticmethod
-    def get(request, *args, **kwargs):
-        return render(request, 'send_email.html')
+class SendEmailAnymail(View):
 
     @staticmethod
-    def post(request, *args, **kwargs):
-        if request.method == 'POST':
-            try:
-                subject = request.POST['subject']
-                message = request.POST['message']
-                from_email = request.POST['from']
-                html_message = bool(request.POST.get('html-message', False))
-                recipient_list = [request.POST.get('to', settings.DEFAULT_TO_EMAIL)]
-
-                email = EmailMessage(subject, message, from_email, recipient_list)
-                if html_message:
-                    email.content_subtype = 'html'
-                email.send()
-            except KeyError:
-                return HttpResponse('Please fill in all fields')
-
-            return HttpResponse('Email sent :)')
-
-
-class SendEmailAnymail(TemplateView):
-    template_name = 'send_email.html'
-
-    def get(self, request, **kwargs):
+    def get(request, **kwargs):
         # send_mail("It works!",
         #           "111 This will get sent through Brevo 222",
         #           "Anymail Sender <ramonaweb2@gmail.com>",
@@ -107,8 +78,8 @@ class SendEmailAnymail(TemplateView):
             },
             "to": [
                 {
-                    "email": "ramonaweb2@gmail.com",
-                    "name": "Jimmy"
+                    "email": "ramona.gospodinova@gmail.com",
+                    "name": "RG"
                 }
             ],
             "htmlContent": "<!DOCTYPE html> <html> <body> <h1>Test headings</h1> </html>",
