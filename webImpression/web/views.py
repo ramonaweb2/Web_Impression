@@ -98,3 +98,4 @@ class SendEmailAnymail(View):
         response_text = response.text + f"APY_KEY: {settings.APY_KEY}"
 
         return HttpResponse(response_text)
+
