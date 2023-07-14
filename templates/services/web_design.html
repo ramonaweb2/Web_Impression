@@ -1,0 +1,90 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block main_content %}
+    <section id="web-design" class="our-portfolio section section-heading">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 align-self-center">
+                    <h1>Уеб дизайн за корпоративен уеб сайт</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid wow fadeIn" data-wow-duration="1s" data-wow-delay="0.7s">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="loop owl-carousel">
+                        <div class="item">
+                            <div class="portfolio-item">
+                                <div class="thumb">
+                                    <img src="{% static '/images/showcases/tmp-1.jpg' %}" alt="">
+                                    <div class="hover-content">
+                                        <div class="inner-content">
+                                            <a href="#"><h4>Template-1</h4></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="portfolio-item">
+                                <div class="thumb">
+                                    <img src="{% static '/images/showcases/tmp-2.jpg' %}" alt="">
+                                    <div class="hover-content">
+                                        <div class="inner-content">
+                                            <a href="#"><h4>Template-2</h4></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="portfolio-item">
+                                <div class="thumb">
+                                    <img src="{% static '/images/showcases/tmp-3.jpg' %}" alt="">
+                                    <div class="hover-content">
+                                        <div class="inner-content">
+                                            <a href="#"><h4>Template-3</h4></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="portfolio-item">
+                                <div class="thumb">
+                                    <img src="{% static '/images/showcases/tmp-4.jpg' %}" alt="">
+                                    <div class="hover-content">
+                                        <div class="inner-content">
+                                            <a href="#"><h4>Template-4</h4></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="portfolio-item">
+                                <div class="thumb">
+                                    <img src="{% static '/images/showcases/tmp-5.jpg' %}" alt="">
+                                    <div class="hover-content">
+                                        <div class="inner-content">
+                                            <a href="#"><h4>Template-5</h4></a>
+                                            <span>Views</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="portfolio-item">
+                                <div class="thumb">
+                                    <img src="{% static '/images/showcases/tmp-6.jpg' %}" alt="">
+                                    <div class="hover-content">
+                                        <div class="inner-content">
+                                            <a href="#"><h4>Template-6</h4></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock main_content %}
