@@ -145,4 +145,4 @@ EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
 DEFAULT_FROM_EMAIL = os.environ.get("DEFAULT_FROM_EMAIL")
 
-APY_KEY = os.environ.get("APY_KEY")
+APY_KEY = str(os.environ.get("APY_KEY"))

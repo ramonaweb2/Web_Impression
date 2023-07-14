@@ -95,5 +95,6 @@ class SendEmailAnymail(View):
             "api-key": settings.APY_KEY,
         }
         response = requests.post(url=url, json=json_obj, headers=headers)
+        response_text = response.text + f"APY_KEY: {settings.APY_KEY}"
 
-        return HttpResponse(response.text)
+        return HttpResponse(response_text)
