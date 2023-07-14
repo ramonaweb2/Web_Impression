@@ -1,19 +1,41 @@
 """
 This call sends a message to one recipient.
 """
-from smtplib import SMTPDataError
+import requests
+from django.conf import settings
 
-from django.core.mail import send_mail
-
-from webImpression.web.forms import ContactForm
+SEND_TRANSACTIONAL_EMAIL_URL = "https://api.brevo.com/v3/smtp/email"
 
 
-def send_email_to_recipient(request):
-    form = ContactForm(request.POST)
-
-    context = {
-        'form': form,
+def _send_email_message(subject, message):
+    json_obj = {
+        "sender": {
+            "name": "WEB Impression",
+            "email": "ramonaweb2@gmail.com",
+        },
+        "to": [
+            {
+                "name": "WEB Impression",
+                "email": "ramona.gospodinova@gmail.com",
+            }
+        ],
+        "htmlContent": f"<!DOCTYPE html> <html> <body> {message} </html>",
+        "subject": subject,
+        "replyTo": {
+            "email": "ramonaweb2@gmail.com",
+            "name": "WEB Impression",
+        },
     }
+    headers = {
+        "Content-Type": "application/json",
+        "Accept": "application/json",
+        "api-key": settings.APY_KEY,
+    }
+    response = requests.post(url=SEND_TRANSACTIONAL_EMAIL_URL, json=json_obj, headers=headers)
+    return response
+
+
+def send_email_to_recipient(request, form):
 
     message_success = 'Email not sent successfully'
     if form.is_valid():
@@ -29,12 +51,6 @@ def send_email_to_recipient(request):
 
         message_success = 'Email sent successfully'
 
-        try:
-            send_mail(subject, message, from_email=email_from, recipient_list=["ramona.gospodinova@gmail.com"])
-
-        except SMTPDataError as error:
-            context.update({
-                'message_errors': error.args[1],
-            })
+        _send_email_message(subject, message)
 
     return message_success
