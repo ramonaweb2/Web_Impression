@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.views import View
+from django.views.decorators.cache import never_cache
 from django.views.generic import TemplateView
 
 from webImpression.utils.emails import send_email_to_recipient
