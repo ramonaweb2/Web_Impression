@@ -60,3 +60,7 @@ class ContactsView(View):
 
 class WebDesignView(TemplateView):
     template_name = 'services/web_design.html'
+
+
+class SEOView(TemplateView):
+    template_name = 'services/seo_optimization.html'
