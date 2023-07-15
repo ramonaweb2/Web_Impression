@@ -184,7 +184,7 @@ body {
   font-weight: 800;
   color: #2a2a2a;
   line-height: 52px;
-  margin-bottom: 50px;
+  margin: 50px 0;
   background: #FA9D4D;
   background: -webkit-linear-gradient(to right, #FA9D4D 0%, #FF4F6B 100%);
   background: -moz-linear-gradient(to right, #FA9D4D 0%, #FF4F6B 100%);
@@ -730,6 +730,46 @@ header
   .header-area .main-nav .nav li.submenu:hover ul, .header-area .main-nav .nav li.submenu:focus ul {
     height: 0;
   }
+
+    .header-area .main-nav .logo h4 {
+    font-size: 30px;
+  }
+  .header-area .main-nav .logo h4 img {
+    max-width: 30px;
+    margin-left: 5px;
+  }
+  .main-banner .info-stat {
+    margin-bottom: 15px;
+  }
+  .service-item {
+    text-align: center;
+    padding: 30px;
+  }
+  .service-item .icon {
+    float: none;
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+  .service-item .right-content {
+    display: inline-block;
+  }
+  .our-portfolio .section-heading,
+  .about-us .section-heading,
+  .about-us .about-item,
+  .about-us p,
+  .about-us .main-green-button {
+    text-align: center;
+  }
+  .our-services .section-heading {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+  .about-us .about-item {
+    margin-top: 15px;
+  }
+  form#contact {
+    padding: 30px;
+  }
 }
 
 @media (min-width: 767px) {
@@ -1262,40 +1302,19 @@ Due to the split circle of progress-left and progress right, we must use the ani
 
 /* 
 ---------------------------------------------
-About Us Style
+SEO Style
 --------------------------------------------- 
 */
 
-#about {
-  padding-top: 130px;
+#seo .left-image {
+  padding: 50px 0;
 }
 
-.about-us .section-heading {
-  margin-bottom: 40px;
+#seo .left-image img {
+  width: 60%;
+  display: block;
+  margin: 0 auto;
 }
-
-.about-us .left-image {
-  margin-right: 45px;
-}
-
-.about-us .about-item h4 {
-  font-size:38px;
-  font-weight: 800;
-  color:#088ec3;
-}
-
-.about-us .about-item h6 {
-  font-size: 16px;
-  margin-top: 5px;
-  font-weight: 400;
-  color: #2a2a2a;
-  text-transform: capitalize;
-}
-
-.about-us p {
-  margin: 40px 0;
-}
-
 /*
 ---------------------------------------------
 Homepage Services Style
@@ -1687,47 +1706,5 @@ responsive
   }
   form#contact {
     padding: 45px;
-  }
-}
-
-@media (max-width: 767px) {
-  .header-area .main-nav .logo h4 {
-    font-size: 30px;
-  }
-  .header-area .main-nav .logo h4 img {
-    max-width: 30px;
-    margin-left: 5px;
-  }
-  .main-banner .info-stat {
-    margin-bottom: 15px;
-  }
-  .service-item {
-    text-align: center;
-    padding: 30px;
-  }
-  .service-item .icon {
-    float: none;
-    margin-right: 0;
-    margin-bottom: 15px;
-  }
-  .service-item .right-content {
-    display: inline-block;
-  }
-  .our-portfolio .section-heading,
-  .about-us .section-heading,
-  .about-us .about-item,
-  .about-us p,
-  .about-us .main-green-button {
-    text-align: center;
-  }
-  .our-services .section-heading {
-    margin-left: 15px;
-    margin-right: 15px;
-  }
-  .about-us .about-item {
-    margin-top: 15px;
-  }
-  form#contact {
-    padding: 30px;
   }
 }
