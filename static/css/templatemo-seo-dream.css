@@ -1405,11 +1405,6 @@ Portfolio
   border-radius: 50px;
 }
 
-.portfolio-item:hover .thumb .hover-content {
-  opacity: 1;
-  visibility: visible;
-}
-
 .portfolio-item .thumb {
   position: relative;
   border-radius: 50px;
