@@ -10,8 +10,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap"
           rel="stylesheet">
+    <script src="https://use.fontawesome.com/daee824978.js"></script>
 
-    <title>Изработка на уебсайт и SEO оптимизация</title>
+    <title>{% block title %}{% endblock %}</title>
 
     <!-- Bootstrap core CSS -->
     <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
@@ -21,6 +22,7 @@
     <link rel="stylesheet" href="{% static 'css/templatemo-seo-dream.css' %}">
     <link rel="stylesheet" href="{% static 'css/animated.css' %}">
     <link rel="stylesheet" href="{% static 'css/owl.carousel.css' %}">
+    <link rel="stylesheet" href="{% static 'css/pricelist_table.css' %}">
 
     <!-- Favicon -->
     <link rel="icon" href="{% static 'images/favicon.ico' %}" sizes="32x32"/>
@@ -104,5 +106,8 @@
 <script src="{% static 'js/custom.js' %}"></script>
 <script src="{% static 'js/owl_carousel.js' %}"></script>
 
+<!-- Start of HubSpot Embed Code -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js-eu1.hs-scripts.com/139676485.js"></script>
+<!-- End of HubSpot Embed Code -->
 </body>
 </html>

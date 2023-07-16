@@ -168,23 +168,27 @@ body {
   margin-top: 120px;
 }
 
+.intro-section {
+  padding: 100px 0 30px 0;
+  overflow: hidden;
+  position: relative;
+}
+
 .section {
-  padding: 100px 0 120px 0;
+  padding: 30px 0;
   position: relative;
   overflow: hidden;
 }
 
 .section-heading {
-  margin-bottom: 60px;
+  padding: 30px 0;
 }
 
 .section-heading h1 {
-  border-top: 1px solid #eee;
   font-size: 40px;
   font-weight: 800;
   color: #2a2a2a;
   line-height: 52px;
-  margin: 50px 0;
   background: #FA9D4D;
   background: -webkit-linear-gradient(to right, #FA9D4D 0%, #FF4F6B 100%);
   background: -moz-linear-gradient(to right, #FA9D4D 0%, #FF4F6B 100%);
