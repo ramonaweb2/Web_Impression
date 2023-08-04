@@ -1392,9 +1392,8 @@ section {
 }
 
 .contact .contact-form .sent-message {
-  display: none;
-  color: #fff;
-  background: #18d26e;
+  color: #000;
+  background: #d1e7dd;
   text-align: center;
   padding: 15px;
   font-weight: 600;
@@ -2002,6 +2001,17 @@ section {
   line-height: 24px;
   margin-bottom: 0;
   font-family: "Raleway", sans-serif;
+  color: #fff;
+}
+
+#footer .footer-info a {
+   color: rgba(255, 255, 255, 0.6);
+    transition: 0.3s;
+    display: inline-block;
+    line-height: 1;
+}
+
+#footer .footer-info a:hover {
   color: #fff;
 }
 

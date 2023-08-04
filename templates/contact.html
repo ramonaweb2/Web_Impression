@@ -31,13 +31,13 @@
               <div class="phone">
                 <i class="bi bi-phone"></i>
                 <h4>Телефон:</h4>
-                <p>0892 601 740</p>
+                <p><a href="tel:+359892601740">0892 601 740</a></p>
               </div>
 
               <div class="email">
                 <i class="bi bi-envelope"></i>
-                <h4>Email:</h4>
-                <p>web.impression2@gmail.com</p>
+                <h4>Имейл:</h4>
+                <p><a href="mailto:web.impression2@gmail.com">web.impression2@gmail.com</a></p>
               </div>
             </div>
           </div>
@@ -49,36 +49,34 @@
                     {% csrf_token %}
                     <div class="row">
                         <div class="col-md-6 form-group">
-                            <input type="text" name="name" class="form-control" id="name" placeholder="Your Name"
+                            <input type="text" name="name" class="form-control" id="name" placeholder="Име"
                                    required="">
                         </div>
                         <div class="col-md-6 form-group mt-3 mt-md-0">
-                            <input type="email" class="form-control" name="email" id="email" placeholder="Your Email"
+                            <input type="email" class="form-control" name="email" id="email" placeholder="Имейл"
                                    required="">
                         </div>
                     </div>
                     <div class="form-group mt-3">
-                        <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject"
+                        <input type="text" class="form-control" name="subject" id="subject" placeholder="Тема"
                                required="">
                     </div>
                     <div class="form-group mt-3">
-                        <textarea class="form-control" name="message" rows="5" placeholder="Message"
+                        <textarea class="form-control" name="message" rows="5" placeholder="Съобщение"
                                   required=""></textarea>
                     </div>
+                    <div class="text-center mt-3">
+                        <button type="submit">Изпрати съобщение</button>
+                    </div>
+
                     <div class="my-3">
-                        <div class="loading">Loading</div>
-                        <div class="error-message"></div>
-
                          {% if message_success %}
-                            <div class="sent-message">Your message has been sent. Thank you!</div>
-                        {% endif %}
+                            <div class="sent-message">Вашето съобщение е изпратено успешно. Благодарим Ви!</div>
+                         {% endif %}
                     </div>
-                    <div class="text-center">
-                        <button type="submit">Send Message</button>
-                    </div>
-
-
                 </form>
+
+
                 <!-- ***** Contact Form End ***** -->
 
             </div>
