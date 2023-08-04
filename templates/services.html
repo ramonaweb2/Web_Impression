@@ -1,79 +1,179 @@
 {% extends 'base/base.html' %}
 {% load static %}
 
-{% block title %}Услуги{% endblock %}
-
 {% block main_content %}
-    <!--  New code goes here -->
-    <section id="main-banner" class="main-banner wow fadeIn animated section-heading">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 align-self-center">
-                    <div class="left-content header-text wow fadeInLeft animated">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <h1>Нашите услуги зад вашите успехи</h1>
-                            </div>
-                            <div class="col-lg-12">
-                                <div class="main-green-button scroll-to-section">
-                                    <a href="#our_services">Виж услуги</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <img src="{% static 'images/banner-right-image-1.png' %}" alt="">
-                </div>
-            </div>
+
+  <main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Услуги</h2>
+          <ol>
+            <li><a href="/">Начало</a></li>
+            <li>Услуги</li>
+          </ol>
         </div>
-    </section>
-    <section id="our_services" class="section">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-4">
-                    <div class="service-item">
-                        <h2>Изработка на уебсайт</h2>
-                        <div class="line-dec"></div>
-                        <p>Ние ще изпълним планирането, разработката на Вашия бизнес сайт.
-                            За да бъдем максимално полезни и изпълним всички ваши изисквания
-                            Ви предлагаме <strong>безплатна поддръжка след завършването на уебсайта</strong>.
-                            Създаваме <strong>удобен, адаптвен и опростен уеб сайт</strong>, който напълно да отговаря
-                            на вашите нужди.
-                            Избираме подходяща структура, която да съответства на целите и предизвикателствата.
-                            Нашата работа включва и добавяне на съдържание и актуализиране на старото,
-                            техническа поддръжка.
-                        </p>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="service-item">
-                        <h2>Редизайн на уебсайт</h2>
-                        <div class="line-dec"></div>
-                        <p>
-                            Ние можем <strong>да променим визията на уебсайта Ви</strong>, като използваме съвременни тенденции
-                            и освежанане на съдържанието. Ще запазим всички функционалности и текущото съдържание,
-                            ако те ще ви бъдат полезни.
-                            Нашата цел е да подобрим потребителското преживяване и цялостната визия и структура
-                            на сайта.
-                        </p>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="service-item">
-                        <h2>SEO оптимизация на сайт</h2>
-                        <div class="line-dec"></div>
-                        <p>Ние ще извършим анализ на състоянието на сайта (чрез <strong>безплатен SEO одит</strong>)
-                            и ще съставим план за основна оптимизация на уебсайта.
-                            Минимумът от дейности за популяризирането му включва
-                            <strong>On-Page SEO и Off-Page SEO</strong>.
-                            Оптимизацията представлява комплекс от задачи, които се изпълняват постепенно,
-                            за да се изкачат всички страниците от сайта на по-високи позиции при избрани търсения
-                            в Google.
-                        </p>
-                    </div>
-                </div>
-            </div>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services">
+      <div class="container">
+
+        <div class="row content">
+            <h2 class="text-center">Услугите, които Ви предоставяме</h2>
         </div>
-    </section>
-{% endblock main_content %}
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="icon-box">
+                <img src="{% static 'img/icons/web_design.png'%}" class="img-fluid" alt="">
+                <h4><a href="#">Уеб дизайн и изработка на уеб сайтове</a></h4>
+                <p>Избирате дизайн съобразен с вашите нужди, продукти и услуги. Удобен за мобилни устройства.</p>
+            </div>
+          </div>
+          <div class="col-md-6 mt-4 mt-md-0">
+            <div class="icon-box">
+              <img src="{% static 'img/icons/seo_google.png'%}" class="img-fluid" alt="">
+              <h4><a href="#">SEO оптимизация на уеб сайтове</a></h4>
+              <p>Оптимизация на всички страници на сайта, изграждане на линкове, подходяща структура, заглавия, описания и много други.</p>
+            </div>
+          </div>
+          <div class="col-md-6 mt-4 mt-md-0">
+            <div class="icon-box">
+              <img src="{% static 'img/icons/local_seo.png'%}" class="img-fluid" alt="">
+              <h4><a href="#">Оптимизация на локален бизнес</a></h4>
+              <p>Локалното SEO позволява да привлечете местни клиенти, които да се запознаят от близо с вашите продукти и услуги.</p>
+            </div>
+          </div>
+          <div class="col-md-6 mt-4 mt-md-0">
+            <div class="icon-box">
+              <img src="{% static 'img/icons/social-media.png'%}" class="img-fluid" alt="">
+              <h4><a href="#">Присъствие в социалните мрежи</a></h4>
+              <p>Изграждането на социално присъствие е ключово в комуникацията с потребителите и клиентите на Вашия бизнес.</p>
+            </div>
+          </div>
+          <div class="col-md-6 mt-4 mt-md-0">
+            <div class="icon-box">
+              <img src="{% static 'img/icons/support.png'%}" class="img-fluid" alt="">
+              <h4><a href="#">Съпорт и техническо обслужване</a></h4>
+              <p>При всякакви въпроси, свързани с уеб сайта, ние сме на разположение за вас.</p>
+            </div>
+          </div>
+          <div class="col-md-6 mt-4 mt-md-0">
+            <div class="icon-box">
+               <img src="{% static 'img/icons/website_content.png'%}" class="img-fluid" alt="">
+              <h4><a href="#">Управление на съдържанието</a></h4>
+              <p>Публикуването на съдържание в уеб сайта и социалните мрежи е неразделна част от вашето дигитално присъствие.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Services Section -->
+
+    <!-- ======= Features Section ======= -->
+    <section id="features" class="features d-none">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Features</h2>
+          <p>Check our Features</p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-3">
+            <ul class="nav nav-tabs flex-column">
+              <li class="nav-item">
+                <a class="nav-link active show" data-bs-toggle="tab" href="#tab-1">Modi sit est</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#tab-2">Unde praesentium sed</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#tab-3">Pariatur explicabo vel</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#tab-4">Nostrum qui quasi</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#tab-5">Iusto ut expedita aut</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-9 mt-4 mt-lg-0">
+            <div class="tab-content">
+              <div class="tab-pane active show" id="tab-1">
+                <div class="row">
+                  <div class="col-lg-8 details order-2 order-lg-1">
+                    <h3>Architecto ut aperiam autem id</h3>
+                    <p class="fst-italic">Qui laudantium consequatur laborum sit qui ad sapiente dila parde sonata raqer a videna mareta paulona marka</p>
+                    <p>Et nobis maiores eius. Voluptatibus ut enim blanditiis atque harum sint. Laborum eos ipsum ipsa odit magni. Incidunt hic ut molestiae aut qui. Est repellat minima eveniet eius et quis magni nihil. Consequatur dolorem quaerat quos qui similique accusamus nostrum rem vero</p>
+                  </div>
+                  <div class="col-lg-4 text-center order-1 order-lg-2">
+                    <img src="assets/img/features-1.png" alt="" class="img-fluid">
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane" id="tab-2">
+                <div class="row">
+                  <div class="col-lg-8 details order-2 order-lg-1">
+                    <h3>Et blanditiis nemo veritatis excepturi</h3>
+                    <p class="fst-italic">Qui laudantium consequatur laborum sit qui ad sapiente dila parde sonata raqer a videna mareta paulona marka</p>
+                    <p>Ea ipsum voluptatem consequatur quis est. Illum error ullam omnis quia et reiciendis sunt sunt est. Non aliquid repellendus itaque accusamus eius et velit ipsa voluptates. Optio nesciunt eaque beatae accusamus lerode pakto madirna desera vafle de nideran pal</p>
+                  </div>
+                  <div class="col-lg-4 text-center order-1 order-lg-2">
+                    <img src="assets/img/features-2.png" alt="" class="img-fluid">
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane" id="tab-3">
+                <div class="row">
+                  <div class="col-lg-8 details order-2 order-lg-1">
+                    <h3>Impedit facilis occaecati odio neque aperiam sit</h3>
+                    <p class="fst-italic">Eos voluptatibus quo. Odio similique illum id quidem non enim fuga. Qui natus non sunt dicta dolor et. In asperiores velit quaerat perferendis aut</p>
+                    <p>Iure officiis odit rerum. Harum sequi eum illum corrupti culpa veritatis quisquam. Neque necessitatibus illo rerum eum ut. Commodi ipsam minima molestiae sed laboriosam a iste odio. Earum odit nesciunt fugiat sit ullam. Soluta et harum voluptatem optio quae</p>
+                  </div>
+                  <div class="col-lg-4 text-center order-1 order-lg-2">
+                    <img src="assets/img/features-3.png" alt="" class="img-fluid">
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane" id="tab-4">
+                <div class="row">
+                  <div class="col-lg-8 details order-2 order-lg-1">
+                    <h3>Fuga dolores inventore laboriosam ut est accusamus laboriosam dolore</h3>
+                    <p class="fst-italic">Totam aperiam accusamus. Repellat consequuntur iure voluptas iure porro quis delectus</p>
+                    <p>Eaque consequuntur consequuntur libero expedita in voluptas. Nostrum ipsam necessitatibus aliquam fugiat debitis quis velit. Eum ex maxime error in consequatur corporis atque. Eligendi asperiores sed qui veritatis aperiam quia a laborum inventore</p>
+                  </div>
+                  <div class="col-lg-4 text-center order-1 order-lg-2">
+                    <img src="assets/img/features-4.png" alt="" class="img-fluid">
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane" id="tab-5">
+                <div class="row">
+                  <div class="col-lg-8 details order-2 order-lg-1">
+                    <h3>Est eveniet ipsam sindera pad rone matrelat sando reda</h3>
+                    <p class="fst-italic">Omnis blanditiis saepe eos autem qui sunt debitis porro quia.</p>
+                    <p>Exercitationem nostrum omnis. Ut reiciendis repudiandae minus. Omnis recusandae ut non quam ut quod eius qui. Ipsum quia odit vero atque qui quibusdam amet. Occaecati sed est sint aut vitae molestiae voluptate vel</p>
+                  </div>
+                  <div class="col-lg-4 text-center order-1 order-lg-2">
+                    <img src="assets/img/features-5.png" alt="" class="img-fluid">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Features Section -->
+
+  </main><!-- End #main -->
+
+{% endblock %}

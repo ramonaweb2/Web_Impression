@@ -1,0 +1,58 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block main_content %}
+
+  <main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>За нас</h2>
+          <ol>
+            <li><a href="{% url 'homepage' %}">Home</a></li>
+            <li>За нас</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container">
+
+        <div class="row content">
+          <div class="col-lg-6">
+            <h2>Уеб сайт и SEO за малкия и среден бизнес</h2>
+            <p class="h3">Защо да плащате купища пари за дигитални решения, които лесно могат да се изпълнят и да ви предоставят стойност.</p>
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0">
+            <p>
+              Нашата дейност е насочена към подпомагане на малки и стартиращи бизнеси, защото именно те имат нужда от
+                печеливша инвестиция. Услугите, които предлагаме, могат да покрият всички основни изисквания на един успешен
+                и конкурентен уеб сайт. Оптимизацията му ще Ви донесе повече посещения, а те от своя страна повече клиенти.
+                Вашите предимства при избора са:
+            </p>
+            <ul>
+              <li><i class="ri-check-double-line"></i> Предлагаме ви избор на визия според личните ви изисквания и предпочитания.</li>
+              <li><i class="ri-check-double-line"></i> Съставяме план за работа, консултираме ви и вие следите развитието.</li>
+              <li><i class="ri-check-double-line"></i> Извършваме оценка на конкурантите ви и ви предлагаме действия, с които да изградим сайта и да го оптимизираме.</li>
+              <li><i class="ri-check-double-line"></i> Използваме различни визуални елементи и актиални технологии, с които да привлечем вниманието на вашите посетители.</li>
+              <li><i class="ri-check-double-line"></i> Комбинираме необходимите ресурси и инструменти, за да предложим изцяло лично отношение към вашите нужди и желания.</li>
+              <li><i class="ri-check-double-line"></i>Работим за вас всеки ден и сме на вашите услуги.</li>
+            </ul>
+            <p class="fst-italic">
+              Нашата мисия е да се развиваме заедно с вас, а вие сте нашият партньор в това начинание!
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Section -->
+
+  </main><!-- End #main -->
+
+{% endblock %}

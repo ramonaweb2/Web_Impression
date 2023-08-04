@@ -38,6 +38,18 @@ class ServicesView(View):
         return render(request, 'services.html')
 
 
+class AboutView(View):
+    @staticmethod
+    def get(request, *args, **kwargs):
+        return render(request, 'about.html')
+
+
+class PricingView(View):
+    @staticmethod
+    def get(request, *args, **kwargs):
+        return render(request, 'pricing.html')
+
+
 class ContactsView(View):
     @staticmethod
     def get(request, *args, **kwargs):
@@ -46,7 +58,7 @@ class ContactsView(View):
         context = {
             'form': form,
         }
-        return render(request, 'contacts.html', context)
+        return render(request, 'contact.html', context)
 
     @staticmethod
     def post(request):
