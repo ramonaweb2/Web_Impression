@@ -9,8 +9,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.environ.get('SECRET_KEY', 'Default_Key')
 
-DEBUG = bool(os.environ.get('DEBUG'))
-# DEBUG = True
+# DEBUG = bool(os.environ.get('DEBUG'))
+DEBUG = True
 
 if DEBUG:
     ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'web-impression.net']
