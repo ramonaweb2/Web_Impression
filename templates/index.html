@@ -186,156 +186,239 @@
     </section><!-- End Services Section -->
 
     <!-- ======= Portfolio Section ======= -->
-    <section id="portfolio" class="portfolio">
-      <div class="container">
+      <section id="portfolio" class="portfolio">
+          <div class="container">
 
-        <div class="row content">
-            <h2 class="text-center">Демо на бизнес уеб сайтове</h2>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-12 d-flex justify-content-center">
-            <ul id="portfolio-flters">
-              <li data-filter="*" class="filter-active">All</li>
-              <li data-filter=".filter-app">App</li>
-              <li data-filter=".filter-card">Card</li>
-              <li data-filter=".filter-web">Web</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="row portfolio-container">
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="{% static 'img/portfolio/logistic.png'%}" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>App 1</h4>
-                <p>App</p>
-                <div class="portfolio-links">
-                  <a href="{% static 'img/portfolio/logistic.png'%}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
-                </div>
+              <div class="row content">
+                  <h2 class="text-center">Демо на бизнес уеб сайтове</h2>
               </div>
-            </div>
-          </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="{% static 'img/portfolio/car_rent.png'%}" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Web 3</h4>
-                <p>Web</p>
-                <div class="portfolio-links">
-                  <a href="{% static 'img/portfolio/car_rent.png'%}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
-                </div>
+              <div class="row">
+                  <div class="col-lg-12 d-flex justify-content-center">
+                      <ul id="portfolio-flters">
+                          <li data-filter="*" class="filter-active">Всички</li>
+                          <li data-filter=".filter-products">Продуктово базирани</li>
+                          <li data-filter=".filter-services">Услуги</li>
+                          <li data-filter=".filter-business">Бизнес</li>
+                          <li data-filter=".filter-mixed">Общи</li>
+                      </ul>
+                  </div>
               </div>
-            </div>
-          </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="{% static 'img/portfolio/portfolio-3.jpg'%}" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>App 2</h4>
-                <p>App</p>
-                <div class="portfolio-links">
-                  <a href="{% static 'img/portfolio/portfolio-3.jpg'%}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 2"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
-                </div>
+              <div class="row portfolio-container">
+                  <div class="col-lg-4 col-md-6 portfolio-item filter-products">
+                      <div class="portfolio-wrap">
+                          <img src="{% static 'img/portfolio/furniture.png' %}" class="img-fluid" alt="">
+                          <div class="portfolio-info">
+                              <h4>Производство на мебели</h4>
+                              <p>Продуктово базирани</p>
+                              <div class="portfolio-links">
+                                  <a href="{% static 'img/portfolio/furniture.png' %}" data-gallery="portfolioGallery"
+                                     class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-lg-4 col-md-6 portfolio-item filter-services">
+                      <div class="portfolio-wrap">
+                          <img src="{% static 'img/portfolio/car_rent.png' %}" class="img-fluid" alt="">
+                          <div class="portfolio-info">
+                              <h4>Коли под наем</h4>
+                              <p>Услуги</p>
+                              <div class="portfolio-links">
+                                  <a href="{% static 'img/portfolio/car_rent.png' %}" data-gallery="portfolioGallery"
+                                     class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-lg-4 col-md-6 portfolio-item filter-services">
+                      <div class="portfolio-wrap">
+                          <img src="{% static 'img/portfolio/gardener.png' %}" class="img-fluid" alt="">
+                          <div class="portfolio-info">
+                              <h4>Градинарство</h4>
+                              <p>Услуги</p>
+                              <div class="portfolio-links">
+                                  <a href="{% static 'img/portfolio/gardener.png' %}" data-gallery="portfolioGallery"
+                                     class="portfolio-lightbox" title="App 2"><i class="bx bx-plus"></i></a>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-lg-4 col-md-6 portfolio-item filter-services">
+                      <div class="portfolio-wrap">
+                          <img src="{% static 'img/portfolio/photozone.png' %}" class="img-fluid" alt="">
+                          <div class="portfolio-info">
+                              <h4>Фотографски услуги</h4>
+                              <p>Услуги</p>
+                              <div class="portfolio-links">
+                                  <a href="{% static 'img/portfolio/photozone.png' %}" data-gallery="portfolioGallery"
+                                     class="portfolio-lightbox" title="Card 2"><i class="bx bx-plus"></i></a>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-lg-4 col-md-6 portfolio-item filter-services">
+                      <div class="portfolio-wrap">
+                          <img src="{% static 'img/portfolio/woody.png' %}" class="img-fluid" alt="">
+                          <div class="portfolio-info">
+                              <h4>Дърводелски услуги</h4>
+                              <p>Услуги</p>
+                              <div class="portfolio-links">
+                                  <a href="{% static 'img/portfolio/woody.png' %}" data-gallery="portfolioGallery"
+                                     class="portfolio-lightbox" title="Web 2"><i class="bx bx-plus"></i></a>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-lg-4 col-md-6 portfolio-item filter-mixed">
+                      <div class="portfolio-wrap">
+                          <img src="{% static 'img/portfolio/restorant.png' %}" class="img-fluid" alt="">
+                          <div class="portfolio-info">
+                              <h4>Ресторант / заведения за хранене</h4>
+                              <p>Общи</p>
+                              <div class="portfolio-links">
+                                  <a href="{% static 'img/portfolio/restorant.png' %}" data-gallery="portfolioGallery"
+                                     class="portfolio-lightbox" title="App 3"><i class="bx bx-plus"></i></a>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-lg-4 col-md-6 portfolio-item filter-mixed">
+                      <div class="portfolio-wrap">
+                          <img src="{% static 'img/portfolio/delfood.png' %}" class="img-fluid" alt="">
+                          <div class="portfolio-info">
+                              <h4>Ресторант / заведения за хранене</h4>
+                              <p>Общи</p>
+                              <div class="portfolio-links">
+                                  <a href="{% static 'img/portfolio/delfood.png' %}" data-gallery="portfolioGallery"
+                                     class="portfolio-lightbox" title="Card 1"><i class="bx bx-plus"></i></a>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-lg-4 col-md-6 portfolio-item filter-business">
+                      <div class="portfolio-wrap">
+                          <img src="{% static 'img/portfolio/travel.png' %}" class="img-fluid" alt="">
+                          <div class="portfolio-info">
+                              <h4>Туризъм</h4>
+                              <p>Бизнес</p>
+                              <div class="portfolio-links">
+                                  <a href="{% static 'img/portfolio/travel.png' %}" data-gallery="portfolioGallery"
+                                     class="portfolio-lightbox" title="Card 3"><i class="bx bx-plus"></i></a>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-lg-4 col-md-6 portfolio-item filter-mixed">
+                      <div class="portfolio-wrap">
+                          <img src="{% static 'img/portfolio/wed.png' %}" class="img-fluid" alt="">
+                          <div class="portfolio-info">
+                              <h4>Сватбена агенция</h4>
+                              <p>Общи</p>
+                              <div class="portfolio-links">
+                                  <a href="{% static 'img/portfolio/wed.png' %}" data-gallery="portfolioGallery"
+                                     class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-lg-4 col-md-6 portfolio-item filter-services">
+                      <div class="portfolio-wrap">
+                          <img src="{% static 'img/portfolio/accounting.png' %}" class="img-fluid" alt="">
+                          <div class="portfolio-info">
+                              <h4>Счетоводни услуги</h4>
+                              <p>Услуги</p>
+                              <div class="portfolio-links">
+                                  <a href="{% static 'img/portfolio/accounting.png' %}" data-gallery="portfolioGallery"
+                                     class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-lg-4 col-md-6 portfolio-item filter-services">
+                      <div class="portfolio-wrap">
+                          <img src="{% static 'img/portfolio/roofing.png' %}" class="img-fluid" alt="">
+                          <div class="portfolio-info">
+                              <h4>Ремонтни дейности</h4>
+                              <p>Услуги</p>
+                              <div class="portfolio-links">
+                                  <a href="{% static 'img/portfolio/roofing.png' %}" data-gallery="portfolioGallery"
+                                     class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-lg-4 col-md-6 portfolio-item filter-services">
+                      <div class="portfolio-wrap">
+                          <img src="{% static 'img/portfolio/construction.png' %}" class="img-fluid" alt="">
+                          <div class="portfolio-info">
+                              <h4>Строителство</h4>
+                              <p>Услуги</p>
+                              <div class="portfolio-links">
+                                  <a href="{% static 'img/portfolio/construction.png' %}"
+                                     data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i
+                                          class="bx bx-plus"></i></a>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-lg-4 col-md-6 portfolio-item filter-mixed">
+                      <div class="portfolio-wrap">
+                          <img src="{% static 'img/portfolio/drive.png' %}" class="img-fluid" alt="">
+                          <div class="portfolio-info">
+                              <h4>Шофьорски курсове</h4>
+                              <p>Общи</p>
+                              <div class="portfolio-links">
+                                  <a href="{% static 'img/portfolio/drive.png' %}" data-gallery="portfolioGallery"
+                                     class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-lg-4 col-md-6 portfolio-item filter-services">
+                      <div class="portfolio-wrap">
+                          <img src="{% static 'img/portfolio/washing.png' %}" class="img-fluid" alt="">
+                          <div class="portfolio-info">
+                              <h4>Почистване</h4>
+                              <p>Услуги</p>
+                              <div class="portfolio-links">
+                                  <a href="{% static 'img/portfolio/washing.png' %}" data-gallery="portfolioGallery"
+                                     class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-lg-4 col-md-6 portfolio-item filter-mixed">
+                      <div class="portfolio-wrap">
+                          <img src="{% static 'img/portfolio/vet_clinic.png' %}" class="img-fluid" alt="">
+                          <div class="portfolio-info">
+                              <h4>Ветеринана клиника / лекарска помощ</h4>
+                              <p>Общи</p>
+                              <div class="portfolio-links">
+                                  <a href="{% static 'img/portfolio/vet_clinic.png' %}" data-gallery="portfolioGallery"
+                                     class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-lg-4 col-md-6 portfolio-item filter-mixed">
+                      <div class="portfolio-wrap">
+                          <img src="{% static 'img/portfolio/fitness.png' %}" class="img-fluid" alt="">
+                          <div class="portfolio-info">
+                              <h4>Фитнес</h4>
+                              <p>Общи</p>
+                              <div class="portfolio-links">
+                                  <a href="{% static 'img/portfolio/fitness.png' %}" data-gallery="portfolioGallery"
+                                     class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
               </div>
-            </div>
+
           </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-              <img src="{% static 'img/portfolio/portfolio-4.jpg'%}" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Card 2</h4>
-                <p>Card</p>
-                <div class="portfolio-links">
-                  <a href="{% static 'img/portfolio/portfolio-4.jpg'%}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 2"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="{% static 'img/portfolio/portfolio-5.jpg'%}" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Web 2</h4>
-                <p>Web</p>
-                <div class="portfolio-links">
-                  <a href="{% static 'img/portfolio/portfolio-5.jpg'%}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 2"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="{% static 'img/portfolio/portfolio-6.jpg'%}" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>App 3</h4>
-                <p>App</p>
-                <div class="portfolio-links">
-                  <a href="{% static 'img/portfolio/portfolio-6.jpg'%}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 3"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-              <img src="{% static 'img/portfolio/portfolio-7.jpg'%}" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Card 1</h4>
-                <p>Card</p>
-                <div class="portfolio-links">
-                  <a href="{% static 'img/portfolio/portfolio-7.jpg'%}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 1"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-              <img src="{% static 'img/portfolio/portfolio-8.jpg'%}" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Card 3</h4>
-                <p>Card</p>
-                <div class="portfolio-links">
-                  <a href="{% static 'img/portfolio/portfolio-8.jpg'%}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 3"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="{% static 'img/portfolio/portfolio-9.jpg'%}" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Web 3</h4>
-                <p>Web</p>
-                <div class="portfolio-links">
-                  <a href="{% static 'img/portfolio/portfolio-9.jpg'%}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section><!-- End Portfolio Section -->
+      </section><!-- End Portfolio Section -->
 
   </main><!-- End #main -->
 {% endblock main_content %}

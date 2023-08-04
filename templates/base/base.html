@@ -47,7 +47,7 @@
 
           <li><a href="{% url 'about' %}"><span>За нас</span> </a></li>
           <li><a href="{% url 'services' %}">Услуги</a></li>
-          <li><a href="#">Демо</a></li>
+          <li><a href="{% url 'portfolio' %}">Демо</a></li>
           <li><a href="{% url 'pricing' %}">Цени</a></li>
 {#          <li><a href="blog.html">Blog</a></li>#}
 
@@ -87,23 +87,23 @@
           <div class="col-lg-2 col-md-6 footer-links">
             <h4>Полезни линкове</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Начало</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">За нас</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Услуги</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Демо</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Цени</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'homepage' %}">Начало</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'about' %}">За нас</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'services' %}">Услуги</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'portfolio' %}">Демо</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'pricing' %}">Цени</a></li>
             </ul>
           </div>
 
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Нашите услуги</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Уеб дизайн и изработка на уеб сайтове</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">SEO оптимизация на уеб сайтове</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Оптимизация на локален бизнес</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Присъствие в социалните мрежи</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Съпорт и техническо обслужване</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Управление на съдържанието</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'services' %}">Уеб дизайн и изработка на уеб сайтове</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'services' %}">SEO оптимизация на уеб сайтове</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'services' %}">Оптимизация на локален бизнес</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'services' %}">Присъствие в социалните мрежи</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'services' %}">Съпорт и техническо обслужване</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'services' %}">Управление на съдържанието</a></li>
             </ul>
           </div>
 

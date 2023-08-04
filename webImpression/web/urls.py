@@ -8,6 +8,5 @@ urlpatterns = [
     path('about', never_cache(AboutView.as_view()), name='about'),
     path('pricing', never_cache(PricingView.as_view()), name='pricing'),
     path('contacts', never_cache(ContactsView.as_view()), name='contacts'),
-    path('web-design', never_cache(WebDesignView.as_view()), name='web-design'),
-    path('seo', never_cache(SEOView.as_view()), name='seo'),
+    path('portfolio', never_cache(DemoView.as_view()), name='portfolio'),
 ]

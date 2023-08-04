@@ -50,6 +50,12 @@ class PricingView(View):
         return render(request, 'pricing.html')
 
 
+class DemoView(View):
+    @staticmethod
+    def get(request, *args, **kwargs):
+        return render(request, 'portfolio.html')
+
+
 class ContactsView(View):
     @staticmethod
     def get(request, *args, **kwargs):
@@ -66,8 +72,9 @@ class ContactsView(View):
         context = {
             'form': form,
         }
-        send_email_to_recipient(request, form)
-        return render(request, 'contacts.html', context)
+        message_success = send_email_to_recipient(request, form)
+        context['message_success'] = message_success
+        return render(request, 'contact.html', context)
 
 
 class WebDesignView(TemplateView):

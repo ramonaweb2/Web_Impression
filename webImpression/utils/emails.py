@@ -39,17 +39,16 @@ def send_email_to_recipient(request, form):
 
     message_success = 'Email not sent successfully'
     if form.is_valid():
-        first_name = form.cleaned_data.get('first_name')
-        last_name = form.cleaned_data.get('last_name')
+        name = form.cleaned_data.get('name')
         email_from = form.cleaned_data.get('email')
         subject = form.cleaned_data.get('subject')
         form_message = form.cleaned_data.get('message')
 
         message = f"<div>Message: {form_message}</div>"
         message += f"<div>From email: {email_from}</div>"
-        message += f"<div>Name: {first_name} {last_name}</div>"
+        message += f"<div>Name: {name} </div>"
 
-        message_success = 'Email sent successfully'
+        message_success = 'Your message has been sent. Thank you!'
 
         _send_email_message(subject, message)
 
