@@ -1,10 +1,29 @@
 """
 This call sends a message to one recipient.
 """
+import re
+
 import requests
 from django.conf import settings
+from django.http import JsonResponse
+
+from webImpression.web.models import UserSubscriber
 
 SEND_TRANSACTIONAL_EMAIL_URL = "https://api.brevo.com/v3/smtp/email"
+
+
+def validate_email(email):
+    user_subscriber = UserSubscriber.objects.filter(email=email)
+    if email is None:
+        res = JsonResponse({'msg_error': 'Имейл е задължителен.'}, status=400)
+    elif user_subscriber:
+        res = JsonResponse({'msg_error': 'Този имейл адрес вече е регистриран за нашия бюлетин.'}, status=400)
+    elif not re.match(r"^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$", email):
+        res = JsonResponse({'msg_error': 'Имейла е невалиден.'}, status=400)
+    else:
+        res = JsonResponse({'msg_success': ''}, status=200)
+
+    return res
 
 
 def _send_email_message(subject, message):

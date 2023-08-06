@@ -110,10 +110,12 @@
           <div class="col-lg-4 col-md-6 footer-newsletter">
             <h4>Иейл известия</h4>
             <p>Изпратете ни вашия имейл адрес и ние ще се свръжем с вас за повече информация и актуални предложения.</p>
-            <form action="" method="post">
-              <input type="email" name="email"><input type="submit" value="Изпрати">
+            <form action="" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <input type="email" name="email" id="userEmail">
+                <input type="submit" value="Изпрати" name="submit" id="submit">
             </form>
-
+            <p class="message"></p>
           </div>
 
         </div>
@@ -143,6 +145,7 @@
   <script src="{% static 'vendor/swiper/swiper-bundle.min.js'%}"></script>
   <script src="{% static 'vendor/waypoints/noframework.waypoints.js'%}"></script>
   <script src="{% static 'vendor/php-email-form/validate.js'%}"></script>
+  <script src="{% static 'vendor/ajax/jquery/3.7.0_jquery.min.js'%}"></script>
 
   <!-- Template Main JS File -->
   <script src="{% static 'js/main.js'%}"></script>

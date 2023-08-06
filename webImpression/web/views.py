@@ -1,10 +1,11 @@
+from django.http import JsonResponse
 from django.shortcuts import render
 from django.views import View
-from django.views.decorators.cache import never_cache
 from django.views.generic import TemplateView
 
-from webImpression.utils.emails import send_email_to_recipient
+from webImpression.utils.emails import send_email_to_recipient, validate_email
 from webImpression.web.forms import ContactForm
+from webImpression.web.models import UserSubscriber
 
 
 class HomePageView(View):
@@ -24,6 +25,11 @@ class HomePageView(View):
 
     @staticmethod
     def post(request):
+
+        email = request.POST.get('email', None)
+        if email:
+            validate_email(email)
+
         form = ContactForm(request.POST)
         context = {
             'form': form,
@@ -77,9 +83,17 @@ class ContactsView(View):
         return render(request, 'contact.html', context)
 
 
-class WebDesignView(TemplateView):
-    template_name = 'services/web_design.html'
+class SubscriptionView(View):
 
+    @staticmethod
+    def post(request):
+        email = request.POST.get('email', None)
+        res = validate_email(email)
 
-class SEOView(TemplateView):
-    template_name = 'services/seo_optimization.html'
+        if res.status_code == 200:
+            user_subscriber = UserSubscriber()
+            user_subscriber.email = email
+            user_subscriber.save()
+            res = JsonResponse({'msg_success': 'Благодарим ви! Успешно се регистрирахте за нашият бюлетин.'})
+
+        return res
