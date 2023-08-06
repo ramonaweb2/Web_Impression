@@ -1,3 +1,13 @@
-# from django.db import models
+from django.core.validators import EmailValidator
+from django.db import models
 
-# Create your models here.
+EMAIL_MAX_LENGTH = 50
+
+
+class UserSubscriber(models.Model):
+
+    email = models.CharField(
+        unique=True,
+        max_length=EMAIL_MAX_LENGTH,
+        validators=[EmailValidator],
+    )
