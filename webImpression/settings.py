@@ -8,10 +8,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'Default_Key')
 
 DEBUG = bool(os.environ.get('DEBUG'))
 
-if DEBUG:
-    ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
-else:
-    ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '').split(' ')
+ALLOWED_HOSTS = ['web-impression.net', '44.208.82.140']
 
 CSRF_TRUSTED_ORIGINS = [f'https://{x}' for x in ALLOWED_HOSTS]
 
