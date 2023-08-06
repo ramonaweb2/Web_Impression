@@ -60,28 +60,28 @@ WSGI_APPLICATION = 'webImpression.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-if DEBUG:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'web_impression_db',
-            'USER': 'user-name',
-            'PASSWORD': 'strong-password',
-            'HOST': '127.0.0.1',
-            'PORT': '5432',
-        }
+# if DEBUG:
+#     DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.db.backends.postgresql',
+#             'NAME': 'web_impression_db',
+#             'USER': 'user-name',
+#             'PASSWORD': 'strong-password',
+#             'HOST': '127.0.0.1',
+#             'PORT': '5432',
+#         }
+#     }
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'web_impression_db',
+        'USER':  os.environ.get('DB_USER'),
+        'PASSWORD': os.environ.get('DB_PASSWORD'),
+        'HOST': 'postgres',
+        'PORT': '5432',
     }
-else:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'web_impression_db',
-            'USER':  os.environ.get('DB_USER'),
-            'PASSWORD': os.environ.get('DB_PASSWORD'),
-            'HOST': 'postgres',
-            'PORT': '5432',
-        }
-    }
+}
 
 # Password validation
 if DEBUG:
