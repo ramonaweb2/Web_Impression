@@ -6,7 +6,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.environ.get('SECRET_KEY', 'Default_Key')
 
-DEBUG = bool(os.environ.get('DEBUG'))
+DEBUG = False
 
 ALLOWED_HOSTS = ['web-impression.net', '44.208.82.140']
 
