@@ -63,6 +63,7 @@ Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in 
 # Purging All Unused or Dangling Images, Containers, Volumes, and Networks
 ## (For Docker error: "no space left on device")
 > docker system prune -a
+> docker image prune -a
 
 # SSL Certificate:
 # {!!!
@@ -81,7 +82,7 @@ Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in 
 # docker-compose -f docker-compose.prod.yml up -d --force-recreate nginx
 
 ### Git commands:
-Reset (override) local changes:
+Reset (override) local changes:certbot certonly --webroot -w /path/to/website1 -d example.com
 > git reset --hard
 
 Pull from master branch:

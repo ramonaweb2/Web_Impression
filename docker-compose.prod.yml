@@ -26,16 +26,17 @@ services:
     volumes:
       - ./postgresql:/var/lib/postgresql/data
   nginx:
-    image: nginx
+    image: nginx:latest
     container_name: nginx
     ports:
       - 80:80
       - 443:443
+    restart: always
     volumes:
       - ./staticfiles:/home/app/web/staticfiles
       - ./nginx/conf.d:/etc/nginx/conf.d
       - ./nginx/logs:/var/log/nginx
-      - ./certbot/www:/var/www/certbot/:ro
-      - ./certbot/conf/:/etc/nginx/ssl/:ro
+      - ./certbot/www:/var/www/certbot/
+      - ./certbot/conf/:/etc/nginx/ssl/
     depends_on:
       - web
