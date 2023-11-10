@@ -1,40 +1,29 @@
 version: "3.8"
 services:
-  web:
-    build: .
-    command: python manage.py runserver 0.0.0.0:8000
-    volumes:
-      - ./webimpression/:/usr/src/app/
-    ports:
-      - "8000:8000"
-    env_file:
-      - ./envs/.env.prod
-    depends_on:
-      - db
-  db:
-    image: postgres
-    container_name: local_pgdb
-    restart: always
-    ports:
-      - "5432:5432"
-    environment:
-      POSTGRES_USER: user-name
-      POSTGRES_PASSWORD: strong-password
-    volumes:
-      - local_pgdata:/var/lib/postgresql/data
-  pgadmin:
-    image: dpage/pgadmin4
-    container_name: pgadmin4_container
-    restart: always
-    ports:
-      - "8888:80"
-    environment:
-      PGADMIN_DEFAULT_EMAIL: user-name@domain-name.com
-      PGADMIN_DEFAULT_PASSWORD: strong-password
-    volumes:
-      - pgadmin-data:/var/lib/pgadmin
+ db:
+   image: postgres
+   container_name: local_pgdb
+   restart: always
+   ports:
+     - "5432:5432"
+   environment:
+     POSTGRES_USER: user-name
+     POSTGRES_PASSWORD: strong-password
+   volumes:
+     - local_pgdata:/var/lib/postgresql/data
+ pgadmin:
+   image: dpage/pgadmin4
+   container_name: pgadmin4_container
+   restart: always
+   ports:
+     - "8888:80"
+   environment:
+     PGADMIN_DEFAULT_EMAIL: user-name@domain-name.com
+     PGADMIN_DEFAULT_PASSWORD: strong-password
+   volumes:
+     - pgadmin-data:/var/lib/pgadmin
+
 
 volumes:
-  webimpression:
-  local_pgdata:
-  pgadmin-data:
+ local_pgdata:
+ pgadmin-data:
