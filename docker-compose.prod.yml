@@ -1,11 +1,11 @@
 
 services:
   web:
-    image: ramonagospodinova/shopper:latest
+    image: ramonagospodinova/webImpression:latest
     build: .
-    command: gunicorn shopper.wsgi:application --bind 0.0.0.0:8000
+    command: gunicorn webImpression.wsgi:application --bind 0.0.0.0:8000
     volumes:
-      - ./staticfiles:/tmp/shopper/staticfiles
+      - ./staticfiles:/tmp/webImpression/staticfiles
     ports:
       - 8000:8000
     env_file:
