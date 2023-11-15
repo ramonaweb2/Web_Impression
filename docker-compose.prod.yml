@@ -1,7 +1,7 @@
 
 services:
   web:
-    image: ramonagospodinova/webImpression:latest
+    image: ramonagospodinova/web_impression:latest
     build: .
     command: gunicorn webImpression.wsgi:application --bind 0.0.0.0:8000
     volumes:
