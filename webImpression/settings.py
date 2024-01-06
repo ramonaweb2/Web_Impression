@@ -8,7 +8,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'Default_Key')
 
 DEBUG = False
 
-ALLOWED_HOSTS = ['web-impression.net', '54.156.145.21']
+ALLOWED_HOSTS = ['web-impression.net', '54.156.145.21', '127.0.0.1']
 
 CSRF_TRUSTED_ORIGINS = [f'https://{x}' for x in ALLOWED_HOSTS]
 
@@ -20,6 +20,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # Third Party Apps:
+    'django_recaptcha',
 
     # Custom apps:
     'webImpression.web',
@@ -68,7 +71,7 @@ WSGI_APPLICATION = 'webImpression.wsgi.application'
 #             'PORT': '5432',
 #         }
 #     }
-
+#
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
