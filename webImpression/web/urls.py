@@ -12,4 +12,5 @@ urlpatterns = [
     path('validate', SubscriptionView.as_view(), name='validate'),
     path('newsletter', SubscriptionView.as_view(), name='newsletter'),
     path('robots.txt', RobotsTxtView.as_view(content_type="text/plain"), name='robots'),
+    path('sitemap.xml', SitemapView.as_view(content_type="text/plain"), name='sitemap')
 ]

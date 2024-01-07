@@ -89,3 +89,9 @@ Reset (override) local changes:certbot certonly --webroot -w /path/to/website1 -
 
 Pull from master branch:
 > git pull origin master
+
+
+
+After new version to update website:
+> git pull origin master
+> sudo docker-compose -f docker-compose.prod.yml up -d --build nginx

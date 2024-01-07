@@ -103,3 +103,7 @@ class SubscriptionView(View):
 
 class RobotsTxtView(TemplateView):
     template_name = "robots.txt"
+
+
+class SitemapView(TemplateView):
+    template_name = "sitemap.xml"
