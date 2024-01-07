@@ -92,6 +92,7 @@ Pull from master branch:
 
 
 
-After new version to update website:
+=== After new version to update website: ===
 > git pull origin master
+> docker-compose down --remove-orphans
 > sudo docker-compose -f docker-compose.prod.yml up -d --build nginx
