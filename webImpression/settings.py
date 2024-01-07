@@ -22,7 +22,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # Third Party Apps:
-    'django_recaptcha',
+    # 'django_recaptcha',
 
     # Custom apps:
     'webImpression.web',

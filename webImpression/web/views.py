@@ -99,3 +99,7 @@ class SubscriptionView(View):
             res = JsonResponse({'msg_success': 'Благодарим ви! Успешно се регистрирахте за нашият бюлетин.'})
 
         return res
+
+
+class RobotsTxtView(TemplateView):
+    template_name = "robots.txt"

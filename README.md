@@ -20,7 +20,7 @@ Run specific docker-compose file (-f + <docker-compose filename)
 > sudo docker-compose -f docker-compose.prod.yml up -d
 
 Run specific 'service' from 'docker-compose' file, i.e. 'nginx'
-> sudo docker-compose -f docker-compose.prod.yml run web
+> sudo docker-compose -f docker-compose.prod.yml run nginx
 
 View all services logs:
 > sudo docker-compose logs
