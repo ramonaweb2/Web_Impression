@@ -96,3 +96,6 @@ Pull from master branch:
 > git pull origin master
 > docker-compose down --remove-orphans
 > sudo docker-compose -f docker-compose.prod.yml up -d --build nginx
+
+=== if error "error: Your local changes to the following files would be overwritten by merge:"
+> sudo git reset --hard
