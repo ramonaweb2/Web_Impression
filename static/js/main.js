@@ -1,6 +1,6 @@
 /**
 * Template Name: Sailor
-* Updated: Jul 27 2023 with Bootstrap v5.3.1
+* Updated: Jan 27 2024 with Bootstrap v5.3.1
 * Template URL: https://bootstrapmade.com/sailor-free-bootstrap-theme/
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
@@ -180,91 +180,5 @@
       }
     })
   }
-
-  const validateEmail = function (email) {
-    let formData = new FormData();
-    formData.append('email', email);
-
-    $.ajaxSetup({
-      headers: {
-        "X-CSRFToken": document.querySelector('[name=csrfmiddlewaretoken]').value,
-      }
-    })
-
-    $.ajax({
-        url: 'validate',
-        type: 'POST',
-        dataType: 'json',
-        cache: false,
-        processData: false,
-        contentType: false,
-        data: formData,
-        error: function (error) {
-            let message_error = error.responseJSON.msg_error;
-            $('.message').css('display', 'block');
-            $('.message').text(message_error);
-        },
-        success: function (res) {
-            let message_error = res.msg_error;
-            let message_success = res.msg_success;
-            if (message_success) {
-              $('.message').css('display', 'block');
-              $('.message').text(message_success);
-            } else {
-              $('.message').css('display', 'block');
-              $('.message').text(message_error);
-            }
-        }
-    });
-  }
-
-
-  const subscribeUser = function(email, name) {
-    var formData = new FormData();
-    formData.append('email', email);
-    $.ajaxSetup({
-        headers: {
-            "X-CSRFToken": document.querySelector('[name=csrfmiddlewaretoken]').value,
-        }
-    });
-    $.ajax({
-        url: 'newsletter',
-        type: 'POST',
-        dataType: 'json',
-        cache: false,
-        processData: false,
-        contentType: false,
-        data: formData,
-        error: function (error) {
-            let message_error = error.responseJSON.msg_error;
-            $('.message').css('display', 'block');
-            $('.message').text(message_error);
-        },
-        success: function (res) {
-            let message_success = res.msg_success;
-            if (message_success) {
-              $('.message').css('display', 'block');
-              $('.message').text(message_success);
-            } else {
-              $('.message').text('');
-            }
-
-        }
-    });
-};
-
-  $('#submit').on('click', () => {
-        event.preventDefault();
-        const userEmail = $('#userEmail').val();
-        if (userEmail) {
-            subscribeUser(userEmail);
-        }
-    });
-
-  $('#userEmail').on('change', (event) => {
-    event.preventDefault();
-    const email = event.target.value;
-      validateEmail(email);
-  })
 
 })()
