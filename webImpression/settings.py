@@ -12,6 +12,9 @@ ALLOWED_HOSTS = ['web-impression.net', '54.156.145.21', '127.0.0.1']
 
 CSRF_TRUSTED_ORIGINS = [f'https://{x}' for x in ALLOWED_HOSTS]
 
+# ReCaptcha V2 Debug only
+# SILENCED_SYSTEM_CHECKS = ['django_recaptcha.recaptcha_test_key_error']
+
 # Application definition
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -22,7 +25,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # Third Party Apps:
-    # 'django_recaptcha',
+    'django_recaptcha',
 
     # Custom apps:
     'webImpression.web',
@@ -149,3 +152,7 @@ EMAIL_USE_SSL = False
 DEFAULT_FROM_EMAIL = os.environ.get("DEFAULT_FROM_EMAIL")
 
 APY_KEY = os.getenv("APY_KEY")
+
+# ReCAPTCHA
+RECAPTCHA_PUBLIC_KEY = os.environ.get('RECAPTCHA_PUBLIC_KEY')
+RECAPTCHA_PRIVATE_KEY = os.environ.get('RECAPTCHA_PRIVATE_KEY')

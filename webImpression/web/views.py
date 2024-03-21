@@ -80,8 +80,15 @@ class ContactsView(View):
         context = {
             'form': form,
         }
-        message_success = send_email_to_recipient(request, form)
-        context['message_success'] = message_success
+
+        # Check the Recaptcha
+        captcha_response = request.POST.get('g-recaptcha-response')
+        if not captcha_response:
+            context['message_error'] = 'Невалидна ReCaptcha. Проверете и опитайте отново.'
+        else:
+            message_success = send_email_to_recipient(request, form)
+            context['message_success'] = message_success
+
         return render(request, 'contact.html', context)
 
 

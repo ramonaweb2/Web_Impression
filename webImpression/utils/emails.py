@@ -67,7 +67,7 @@ def send_email_to_recipient(request, form):
         message += f"<div>From email: {email_from}</div>"
         message += f"<div>Name: {name} </div>"
 
-        message_success = 'Your message has been sent. Thank you!'
+        message_success = 'Вашето съобщение е изпратено успешно. Благодарим Ви!'
 
         _send_email_message(subject, message)
 

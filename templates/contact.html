@@ -69,14 +69,20 @@
                                   required=""></textarea>
                     </div>
 
+                    <div>
+                        {{  form.captcha }}
+                    </div>
 
-                       <div class="text-center mt-3">
+                    <div class="text-center mt-3">
                         <button type="submit">Изпрати съобщение</button>
                     </div>
+
                 
                     <div class="my-3">
                          {% if message_success %}
-                            <div class="sent-message">Вашето съобщение е изпратено успешно. Благодарим Ви!</div>
+                            <div class="sent-message">{{ message_success }}</div>
+                         {% elif message_error %}
+                             <div class="alert alert-danger">{{ message_error }}</div>
                          {% endif %}
                     </div>
                 </form>
