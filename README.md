@@ -51,12 +51,6 @@ Remove static files:
 Start bash in container:
 > docker exec -it fee20678f998 bash
 
-### Troubleshooting
-Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in use
-# List who's using the port
-> sudo lsof -i -P -n | grep 80
-> sudo kill <process id>
-
 # Reload NGINX using docker
 > docker-compose exec nginx nginx -s reload
 
@@ -96,6 +90,13 @@ Pull from master branch:
 > git pull origin master
 > docker-compose down --remove-orphans
 > sudo docker-compose -f docker-compose.prod.yml up -d --build nginx
+
+
+### Troubleshooting
+Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in use
+# List who's using the port
+> sudo lsof -i -P -n | grep 80
+> sudo kill <process id>
 
 === if error "error: Your local changes to the following files would be overwritten by merge:"
 > sudo git reset --hard
