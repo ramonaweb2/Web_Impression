@@ -6,7 +6,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.environ.get('SECRET_KEY', 'Default_Key')
 
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['web-impression.net', '54.156.145.21', '127.0.0.1']
 
@@ -63,28 +63,28 @@ WSGI_APPLICATION = 'webImpression.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-# if DEBUG:
-#     DATABASES = {
-#         'default': {
-#             'ENGINE': 'django.db.backends.postgresql',
-#             'NAME': 'web_impression_db',
-#             'USER': 'odoo',
-#             'PASSWORD': 'odoo',
-#             'HOST': '127.0.0.1',
-#             'PORT': '5432',
-#         }
-#     }
-#
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'web_impression_db',
-        'USER':  os.environ.get('DB_USER'),
-        'PASSWORD': os.environ.get('DB_PASSWORD'),
-        'HOST': 'postgres',
-        'PORT': '5432',
+if DEBUG:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': 'web_impression_db',
+            'USER': 'odoo',
+            'PASSWORD': 'odoo',
+            'HOST': '127.0.0.1',
+            'PORT': '5432',
+        }
     }
-}
+#
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'web_impression_db',
+#         'USER':  os.environ.get('DB_USER'),
+#         'PASSWORD': os.environ.get('DB_PASSWORD'),
+#         'HOST': 'postgres',
+#         'PORT': '5432',
+#     }
+# }
 
 # Password validation
 if DEBUG:

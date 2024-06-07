@@ -41,7 +41,7 @@ class HomePageView(View):
 class ServicesView(View):
     @staticmethod
     def get(request, *args, **kwargs):
-        return render(request, 'services.html')
+        return render(request, 'service.html')
 
 
 class AboutView(View):
@@ -56,10 +56,10 @@ class PricingView(View):
         return render(request, 'pricing.html')
 
 
-class DemoView(View):
+class ProjectView(View):
     @staticmethod
     def get(request, *args, **kwargs):
-        return render(request, 'portfolio.html')
+        return render(request, 'project.html')
 
 
 class ContactsView(View):
@@ -87,7 +87,7 @@ class ContactsView(View):
             message_success = send_email_to_recipient(request, form)
             context['message_success'] = message_success
 
-        return render(request, 'contact.html', context)
+        return render(request, 'contact_old.html', context)
 
 
 class SubscriptionView(View):
