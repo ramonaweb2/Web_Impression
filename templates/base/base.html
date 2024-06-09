@@ -10,9 +10,6 @@
   <meta content="{% block meta %}{% endblock %}" name="description">
   <meta content="изработка на уеб сайт, уеб дизайн, SEO оптимизация" name="keywords">
 
-  <!-- Favicon -->
-  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
-
   <!-- bootstrap.min css -->
   <link rel="stylesheet" href="{% static 'plugins/bootstrap/css/bootstrap.min.css' %}">
   <!-- Icon Font Css -->
@@ -47,14 +44,24 @@
 		  <div class="collapse navbar-collapse text-center" id="navbarsExample09">
 			<ul class="navbar-nav m-auto">
 			    <li class="nav-item active">
-				    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+				    <a class="nav-link" href="/">Начало <span class="sr-only">(current)</span></a>
 			    </li>
-			   <li class="nav-item"><a class="nav-link" href="{% url 'services' %}">Services</a></li>
-			   <li class="nav-item"><a class="nav-link" href="{% url 'project' %}">Portfolio</a></li>
-			   <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Contact</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                        Услуги
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <a class="dropdown-item" href="#">Изработка на Wordpress сайт</a>
+                        <a class="dropdown-item" href="#">Изработка на къстъм уеб сайт</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Поддръжка на уеб сайт</a>
+                    </div>
+                </li>
+			   <li class="nav-item"><a class="nav-link" href="{% url 'project' %}">Портфолио</a></li>
+			   <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Контакти</a></li>
 			</ul>
 
-			<a href="{% url 'contact' %}" class="btn btn-solid-border d-none d-lg-block">Get an estimate <i class="fa fa-angle-right ml-2"></i></a>
+			<a href="{% url 'contact' %}" class="btn btn-solid-border d-none d-lg-block">Поискай оферта <i class="fa fa-angle-right ml-2"></i></a>
 		  </div>
 		</div>
 	</nav>
@@ -72,41 +79,39 @@
 					<div class="logo mb-4">
 						<h3>Web Impression</h3>
 					</div>
-					<p>Tempora dolorem voluptatum nam vero assumenda voluptate, facilis ad eos obcaecati tenetur veritatis eveniet distinctio possimus.</p>
+					<p>Уеб услуги включващи изработка на фирмен уеб сайт, къстъм уеб сайт, поддръжка на сайтове и др.</p>
 				</div>
 			</div>
 			<div class="col-lg-2 col-md-6 col-sm-6">
 				<div class="widget mb-5 mb-lg-0">
-					<h4 class="text-capitalize mb-4">Company</h4>
+					<h4 class="text-capitalize mb-4">Информация</h4>
 
 					<ul class="list-unstyled footer-menu lh-35">
-						<li><a href="#">About</a></li>
-						<li><a href="#">Services</a></li>
-						<li><a href="#">Team</a></li>
-						<li><a href="#">Contact</a></li>
+						<li><a href="#">Услуги</a></li>
+						<li><a href="#">Портфолио</a></li>
+						<li><a href="#">Контакти</a></li>
 					</ul>
 				</div>
 			</div>
 			<div class="col-lg-3 col-md-6 col-sm-6">
 				<div class="widget mb-5 mb-lg-0">
-					<h4 class="text-capitalize mb-4">Support</h4>
+					<h4 class="text-capitalize mb-4">Поддръжка</h4>
 
 					<ul class="list-unstyled footer-menu lh-35">
-						<li><a href="#">Terms & Conditions</a></li>
-						<li><a href="#">Privacy Policy</a></li>
-						<li><a href="#">Support</a></li>
-						<li><a href="#">FAQ</a></li>
+						<li><a href="#">Общи условия</a></li>
+						<li><a href="#">Политика за поверителност</a></li>
+						<li><a href="#">ЧЗВ</a></li>
 					</ul>
 				</div>
 			</div>
 			<div class="col-lg-3 col-md-6 col-sm-6">
 				<div class="widget widget-contact mb-5 mb-lg-0">
-					<h4 class="text-capitalize mb-4">Get in Touch</h4>
+					<h4 class="text-capitalize mb-4">Контакти</h4>
 					<h6><a href="mailto:info@mysitebg.com" > <i class="ti-headphone-alt mr-3"></i>info@mysitebg.com</a></h6>
 					<h6><a href="tel:+359892601740"> <i class="ti-mobile mr-3"></i>0892 601 740</a></h6>
 
 					<ul class="list-inline footer-socials mt-5">
-						<li class="list-inline-item"><a href="https://www.facebook.com/themefisher"><i class="ti-facebook mr-2"></i></a></li>
+						<li class="list-inline-item"><a href="https://www.facebook.com/webimpresssion"><i class="ti-facebook mr-2"></i></a></li>
 						<li class="list-inline-item"><a href="https://www.linkedin.com/company/webimpressionnet/"><i class="ti-linkedin mr-2 "></i></a></li>
 					</ul>
 				</div>
@@ -126,11 +131,6 @@
     </footer>
   <!-- End Footer -->
 
-<!--
-    Essential Scripts
-    =====================================-->
-
-
     <!-- Main jQuery -->
     <script src="{% static 'plugins/jquery/jquery.js' %}"></script>
     <script src="{% static 'js/contact.js' %}"></script>
@@ -146,8 +146,6 @@
     <script src="{% static 'plugins/counterup/jquery.counterup.min.js' %}"></script>
 
      <script src="{% static 'plugins/modal-video/modal-video.js' %}"></script>
-    <!-- Google Map -->
-    <script src="{% static 'plugins/google-map/map.js' %}"></script>
     <script src="{% static 'js/script.js' %}"></script>
 
 </body>
