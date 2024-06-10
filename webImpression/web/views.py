@@ -43,6 +43,11 @@ class ServicesView(View):
     def get(request, *args, **kwargs):
         return render(request, 'service.html')
 
+class WordpressView(View):
+    @staticmethod
+    def get(request, *args, **kwargs):
+        return render(request, 'services/wordpress.html')
+
 
 class AboutView(View):
     @staticmethod
