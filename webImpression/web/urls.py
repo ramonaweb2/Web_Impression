@@ -5,7 +5,8 @@ from webImpression.web.views import *
 urlpatterns = [
     path('', HomePageView.as_view(), name='homepage'),
     path('services', ServicesView.as_view(), name='services'),
-    path('izrabotka-wordpress-site', WordpressView.as_view(), name='wordpress'),
+    path('izrabotka-wordpress-website', WordpressWebsiteView.as_view(), name='wordpress'),
+    path('izrabotka-custom-website', CustomWebsiteView.as_view(), name='custom_website'),
     path('about', AboutView.as_view(), name='about'),
     path('pricing', PricingView.as_view(), name='pricing'),
     path('contact', ContactsView.as_view(), name='contact'),

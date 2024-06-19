@@ -3,150 +3,158 @@
 <html lang="bg">
 
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+	<meta charset="utf-8">
+	<meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>{% block title %}{% endblock %}</title>
-  <meta content="{% block meta %}{% endblock %}" name="description">
-  <meta content="изработка на уеб сайт, уеб дизайн, SEO оптимизация" name="keywords">
+	<title>{% block title %}{% endblock %}</title>
+	<meta content="{% block meta %}{% endblock %}" name="description">
+	<meta content="изработка на уеб сайт, уеб дизайн, SEO оптимизация" name="keywords">
 
-  <!-- bootstrap.min css -->
-  <link rel="stylesheet" href="{% static 'plugins/bootstrap/css/bootstrap.min.css' %}">
-  <!-- Icon Font Css -->
-  <link rel="stylesheet" href="{% static 'plugins/themify/css/themify-icons.css' %}">
-  <link rel="stylesheet" href="{% static 'plugins/fontawesome/css/all.css' %}">
-  <link rel="stylesheet" href="{% static 'plugins/magnific-popup/dist/magnific-popup.css' %}">
-  <link rel="stylesheet" href="{% static 'plugins/modal-video/modal-video.css' %}">
-  <link rel="stylesheet" href="{% static 'plugins/animate-css/animate.css' %}">
+	<!-- bootstrap.min css -->
+	<link rel="stylesheet" href="{% static 'plugins/bootstrap/css/bootstrap.min.css' %}">
+	<!-- Icon Font Css -->
+	<link rel="stylesheet" href="{% static 'plugins/themify/css/themify-icons.css' %}">
+	<link rel="stylesheet" href="{% static 'plugins/fontawesome/css/all.css' %}">
+	<link rel="stylesheet" href="{% static 'plugins/magnific-popup/dist/magnific-popup.css' %}">
+	<link rel="stylesheet" href="{% static 'plugins/modal-video/modal-video.css' %}">
+	<link rel="stylesheet" href="{% static 'plugins/animate-css/animate.css' %}">
 
-  <!-- Slick Slider  CSS -->
-  <link rel="stylesheet" href="{% static 'plugins/slick-carousel/slick/slick.css' %}">
-  <link rel="stylesheet" href="{% static 'plugins/slick-carousel/slick/slick-theme.css' %}">
+	<!-- Slick Slider  CSS -->
+	<link rel="stylesheet" href="{% static 'plugins/slick-carousel/slick/slick.css' %}">
+	<link rel="stylesheet" href="{% static 'plugins/slick-carousel/slick/slick-theme.css' %}">
 
-  <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+	<!-- Main Stylesheet -->
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
 
 </head>
 
 <body>
 
-  <!-- ======= Header ======= -->
- 	<nav class="navbar navbar-expand-lg py-4 navigation header-padding " id="navbar">
+	<!-- ======= Header ======= -->
+	<nav class="navbar navbar-expand-lg py-4 navigation header-padding " id="navbar">
 		<div class="container-fluid">
-		  <a class="navbar-brand" href="/">
-		  	<img src="{% static 'images/logo-sm.png' %}" alt="" class="img-fluid">
-		  </a>
+			<a class="navbar-brand" href="/">
+				<img src="{% static 'images/logo-sm.png' %}" alt="" class="img-fluid">
+			</a>
 
-		  <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarsExample09" aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="fa fa-bars"></span>
-		  </button>
+			<button class="navbar-toggler collapsed" type="button" data-toggle="collapse"
+				data-target="#navbarsExample09" aria-controls="navbarsExample09" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="fa fa-bars"></span>
+			</button>
 
-		  <div class="collapse navbar-collapse text-center" id="navbarsExample09">
-			<ul class="navbar-nav m-auto">
-			    <li class="nav-item active">
-				    <a class="nav-link" href="/">Начало <span class="sr-only">(current)</span></a>
-			    </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                        Услуги
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right">
-                        <a class="dropdown-item" href="{% url 'wordpress' %}">Изработка на Wordpress сайт</a>
-                        <a class="dropdown-item" href="#">Изработка на къстъм уеб сайт</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Поддръжка на уеб сайт</a>
-                    </div>
-                </li>
-			   <li class="nav-item"><a class="nav-link" href="{% url 'project' %}">Портфолио</a></li>
-			   <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Контакти</a></li>
-			</ul>
+			<div class="collapse navbar-collapse text-center" id="navbarsExample09">
+				<ul class="navbar-nav m-auto">
+					<li class="nav-item active">
+						<a class="nav-link" href="/">Начало <span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+							aria-haspopup="true" aria-expanded="false">
+							Услуги
+						</a>
+						<div class="dropdown-menu dropdown-menu-right">
+							<a class="dropdown-item" href="{% url 'wordpress' %}">Изработка на Wordpress сайт</a>
+							<a class="dropdown-item" href="{% url 'custom_website' %}">Изработка на къстъм уеб сайт</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="#">Поддръжка на уеб сайт</a>
+						</div>
+					</li>
+					<li class="nav-item"><a class="nav-link" href="{% url 'project' %}">Портфолио</a></li>
+					<li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Контакти</a></li>
+				</ul>
 
-			<a href="{% url 'contact' %}" class="btn btn-solid-border d-none d-lg-block">Поискай оферта <i class="fa fa-angle-right ml-2"></i></a>
-		  </div>
+				<a href="{% url 'contact' %}" class="btn btn-solid-border d-none d-lg-block">Поискай оферта <i
+						class="fa fa-angle-right ml-2"></i></a>
+			</div>
 		</div>
 	</nav>
-  <!-- End Header -->
+	<!-- End Header -->
 
-{% block main_content %}
-{% endblock %}
+	{% block main_content %}
+	{% endblock %}
 
-  <!-- ======= Footer ======= -->
-  <footer class="footer section">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-3 mr-auto col-sm-6">
-				<div class="widget mb-5 mb-lg-0">
-					<div class="logo mb-4">
-						<h3>Web Impression</h3>
-					</div>
-					<p>Уеб услуги включващи изработка на фирмен уеб сайт, къстъм уеб сайт, поддръжка на сайтове и др.</p>
-				</div>
-			</div>
-			<div class="col-lg-2 col-md-6 col-sm-6">
-				<div class="widget mb-5 mb-lg-0">
-					<h4 class="text-capitalize mb-4">Информация</h4>
-
-					<ul class="list-unstyled footer-menu lh-35">
-						<li><a href="#">Услуги</a></li>
-						<li><a href="#">Портфолио</a></li>
-						<li><a href="#">Контакти</a></li>
-					</ul>
-				</div>
-			</div>
-			<div class="col-lg-3 col-md-6 col-sm-6">
-				<div class="widget mb-5 mb-lg-0">
-					<h4 class="text-capitalize mb-4">Поддръжка</h4>
-
-					<ul class="list-unstyled footer-menu lh-35">
-						<li><a href="#">Общи условия</a></li>
-						<li><a href="#">Политика за поверителност</a></li>
-						<li><a href="#">ЧЗВ</a></li>
-					</ul>
-				</div>
-			</div>
-			<div class="col-lg-3 col-md-6 col-sm-6">
-				<div class="widget widget-contact mb-5 mb-lg-0">
-					<h4 class="text-capitalize mb-4">Контакти</h4>
-					<h6><a href="mailto:info@mysitebg.com" > <i class="ti-headphone-alt mr-3"></i>info@mysitebg.com</a></h6>
-					<h6><a href="tel:+359892601740"> <i class="ti-mobile mr-3"></i>0892 601 740</a></h6>
-
-					<ul class="list-inline footer-socials mt-5">
-						<li class="list-inline-item"><a href="https://www.facebook.com/webimpresssion"><i class="ti-facebook mr-2"></i></a></li>
-						<li class="list-inline-item"><a href="https://www.linkedin.com/company/webimpressionnet/"><i class="ti-linkedin mr-2 "></i></a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-
-		<div class="footer-btm py-4 mt-5">
+	<!-- ======= Footer ======= -->
+	<footer class="footer section">
+		<div class="container">
 			<div class="row">
-				<div class="col-lg-6">
-					<div class="copyright">
-						&copy; Copyright 2024 Reserved to <span class="text-color">WebImpression</span>
+				<div class="col-lg-3 mr-auto col-sm-6">
+					<div class="widget mb-5 mb-lg-0">
+						<div class="logo mb-4">
+							<h3>Web Impression</h3>
+						</div>
+						<p>Уеб услуги включващи изработка на фирмен уеб сайт, къстъм уеб сайт, поддръжка на сайтове и
+							др.</p>
+					</div>
+				</div>
+				<div class="col-lg-2 col-md-6 col-sm-6">
+					<div class="widget mb-5 mb-lg-0">
+						<h4 class="text-capitalize mb-4">Информация</h4>
+
+						<ul class="list-unstyled footer-menu lh-35">
+							<li><a href="#">Услуги</a></li>
+							<li><a href="#">Портфолио</a></li>
+							<li><a href="#">Контакти</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6 col-sm-6">
+					<div class="widget mb-5 mb-lg-0">
+						<h4 class="text-capitalize mb-4">Поддръжка</h4>
+
+						<ul class="list-unstyled footer-menu lh-35">
+							<li><a href="#">Общи условия</a></li>
+							<li><a href="#">Политика за поверителност</a></li>
+							<li><a href="#">ЧЗВ</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6 col-sm-6">
+					<div class="widget widget-contact mb-5 mb-lg-0">
+						<h4 class="text-capitalize mb-4">Контакти</h4>
+						<h6><a href="mailto:info@mysitebg.com"> <i
+									class="ti-headphone-alt mr-3"></i>info@mysitebg.com</a></h6>
+						<h6><a href="tel:+359892601740"> <i class="ti-mobile mr-3"></i>0892 601 740</a></h6>
+
+						<ul class="list-inline footer-socials mt-5">
+							<li class="list-inline-item"><a href="https://www.facebook.com/webimpresssion"><i
+										class="ti-facebook mr-2"></i></a></li>
+							<li class="list-inline-item"><a href="https://www.linkedin.com/company/webimpressionnet/"><i
+										class="ti-linkedin mr-2 "></i></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="footer-btm py-4 mt-5">
+				<div class="row">
+					<div class="col-lg-6">
+						<div class="copyright">
+							&copy; Copyright 2024 Reserved to <span class="text-color">WebImpression</span>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-    </footer>
-  <!-- End Footer -->
+	</footer>
+	<!-- End Footer -->
 
-    <!-- Main jQuery -->
-    <script src="{% static 'plugins/jquery/jquery.js' %}"></script>
-    <script src="{% static 'js/contact.js' %}"></script>
-    <!-- Bootstrap 4.3.2 -->
-    <script src="{% static 'plugins/bootstrap/js/popper.js' %}"></script>
-    <script src="{% static 'plugins/bootstrap/js/bootstrap.min.js' %}"></script>
-   <!--  Magnific Popup-->
-    <script src="{% static 'plugins/magnific-popup/dist/jquery.magnific-popup.min.js' %}"></script>
-    <!-- Slick Slider -->
-    <script src="{% static 'plugins/slick-carousel/slick/slick.min.js' %}"></script>
-    <!-- Counterup -->
-    <script src="{% static 'plugins/counterup/jquery.waypoints.min.js' %}"></script>
-    <script src="{% static 'plugins/counterup/jquery.counterup.min.js' %}"></script>
+	<!-- Main jQuery -->
+	<script src="{% static 'plugins/jquery/jquery.js' %}"></script>
+	<script src="{% static 'js/contact.js' %}"></script>
+	<!-- Bootstrap 4.3.2 -->
+	<script src="{% static 'plugins/bootstrap/js/popper.js' %}"></script>
+	<script src="{% static 'plugins/bootstrap/js/bootstrap.min.js' %}"></script>
+	<!--  Magnific Popup-->
+	<script src="{% static 'plugins/magnific-popup/dist/jquery.magnific-popup.min.js' %}"></script>
+	<!-- Slick Slider -->
+	<script src="{% static 'plugins/slick-carousel/slick/slick.min.js' %}"></script>
+	<!-- Counterup -->
+	<script src="{% static 'plugins/counterup/jquery.waypoints.min.js' %}"></script>
+	<script src="{% static 'plugins/counterup/jquery.counterup.min.js' %}"></script>
 
-     <script src="{% static 'plugins/modal-video/modal-video.js' %}"></script>
-    <script src="{% static 'js/script.js' %}"></script>
+	<script src="{% static 'plugins/modal-video/modal-video.js' %}"></script>
+	<script src="{% static 'js/script.js' %}"></script>
 
 </body>
 
